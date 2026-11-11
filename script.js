@@ -53,3 +53,29 @@ backButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "instant" });
     enterButton.focus({ preventScroll: true });
 });
+
+const detailButtons = document.querySelectorAll("[data-dialog]");
+const detailDialogs = document.querySelectorAll(".detail-dialog");
+
+detailButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const dialogId = button.dataset.dialog;
+        const dialog = document.getElementById(dialogId);
+
+        dialog.showModal();
+        document.body.classList.add("dialog-open");
+    });
+});
+
+detailDialogs.forEach((dialog) => {
+    const closeButton = dialog.querySelector(".dialog-close");
+
+    closeButton.addEventListener("click", () => {
+        dialog.close();
+    });
+
+    // Runs when closed with either the button or Escape.
+    dialog.addEventListener("close", () => {
+        document.body.classList.remove("dialog-open");
+    });
+});

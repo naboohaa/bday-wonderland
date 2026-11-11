@@ -169,11 +169,113 @@
 
           <p class="party-details">Time and location coming soon.</p>
 
+          <div class="invitation-actions">
+            <button
+              type="button"
+              class="detail-button"
+              data-dialog="rsvp-dialog"
+            >
+              <span class="button-symbol" aria-hidden="true">♥</span>
+              <span class="button-title">RSVP</span>
+              <span class="button-caption">Your seat awaits</span>
+            </button>
+
+            <button
+              type="button"
+              class="detail-button"
+              data-dialog="wishlist-dialog"
+            >
+              <span class="button-symbol" aria-hidden="true">♦</span>
+              <span class="button-title">Wishlist</span>
+              <span class="button-caption">A few little wishes</span>
+            </button>
+
+            <button
+              type="button"
+              class="detail-button"
+              data-dialog="dress-dialog"
+            >
+              <span class="button-symbol" aria-hidden="true">♠</span>
+              <span class="button-title">Dress code</span>
+              <span class="button-caption">Wear a little wonder</span>
+            </button>
+          </div>
+
           <button id="back-button" class="back-button" type="button">
             Back up the rabbit hole ↑
           </button>
         </div>
       </section>
     </main>
+
+    <dialog id="rsvp-dialog" class="detail-dialog" aria-labelledby="rsvp-title">
+      <button class="dialog-close" type="button" aria-label="Close RSVP">
+        ×
+      </button>
+
+      <p class="eyebrow">You're invited</p>
+      <h2 id="rsvp-title">A seat at the table</h2>
+
+      <p>Will you be joining me down the rabbit hole on January 9?</p>
+
+      <p class="coming-soon">
+        RSVP opens soon. The response link will appear here.
+      </p>
+    </dialog>
+
+    <dialog
+      id="wishlist-dialog"
+      class="detail-dialog"
+      aria-labelledby="wishlist-title"
+    >
+      <button class="dialog-close" type="button" aria-label="Close wishlist">
+        ×
+      </button>
+
+      <p class="eyebrow">A few little wishes</p>
+      <h2 id="wishlist-title">Curious little treasures</h2>
+
+      <p>
+        Your presence is the loveliest present. If you'd like some gift
+        inspiration, I'll share a few ideas here.
+      </p>
+
+      <p class="coming-soon">Wishlist coming soon.</p>
+    </dialog>
+
+    <dialog
+      id="dress-dialog"
+      class="detail-dialog"
+      aria-labelledby="dress-title"
+    >
+      <button class="dialog-close" type="button" aria-label="Close dress code">
+        ×
+      </button>
+
+      <p class="eyebrow">Through the looking glass</p>
+      <h2 id="dress-title">Wear a little wonder</h2>
+
+      <p>
+        Think vintage tea party meets Wonderland: bows, lace, waistcoats,
+        playful hats, floral details, or a little playing-card magic.
+      </p>
+
+      <div
+        class="dress-palette"
+        role="img"
+        aria-label="Colour inspiration: rose red, cream, forest green, antique gold, and dusty pink"
+      >
+        <span class="swatch swatch-rose"></span>
+        <span class="swatch swatch-cream"></span>
+        <span class="swatch swatch-forest"></span>
+        <span class="swatch swatch-gold"></span>
+        <span class="swatch swatch-pink"></span>
+      </div>
+
+      <p class="coming-soon">
+        Outfit inspiration for now — the final clothing theme is coming soon.
+      </p>
+    </dialog>
   </body>
 </html>
+      
