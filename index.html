@@ -116,6 +116,64 @@
 
         <p class="footer-note">For the curious at heart</p>
       </section>
+
+      <!-- Rabbit-hole transition -->
+      <div id="rabbit-hole" class="rabbit-hole" hidden>
+        <div class="tunnel-rings" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="falling-objects" aria-hidden="true">
+          <span class="falling-object falling-heart">♥</span>
+          <span class="falling-object falling-spade">♠</span>
+          <span class="falling-object falling-clock">◷</span>
+          <span class="falling-object falling-diamond">♦</span>
+        </div>
+
+        <p class="falling-text" role="status">Down, down, down…</p>
+      </div>
+
+      <!-- Birthday invitation reveal -->
+      <section
+        id="birthday-details"
+        class="birthday-details"
+        aria-labelledby="birthday-title"
+        tabindex="-1"
+        hidden
+      >
+        <div class="birthday-paper">
+          <p class="eyebrow">You've arrived in Wonderland</p>
+
+          <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
+
+          <p class="save-the-date">Save the date</p>
+
+          <h2 id="birthday-title" class="birthday-date">
+            <span class="date-day">9<span class="date-suffix">th</span></span>
+            <span class="date-month">January</span>
+          </h2>
+
+          <p class="birthday-name">Nabiha's birthday</p>
+
+          <blockquote class="birthday-quote">
+            “Curiouser and curiouser!”
+            <cite>— Alice, Alice in Wonderland</cite>
+          </blockquote>
+
+          <p class="birthday-description">
+            Join me for a little whimsy, a little madness, and a birthday
+            adventure down the rabbit hole.
+          </p>
+
+          <p class="party-details">Time and location coming soon.</p>
+
+          <button id="back-button" class="back-button" type="button">
+            Back up the rabbit hole ↑
+          </button>
+        </div>
+      </section>
     </main>
   </body>
 </html>
