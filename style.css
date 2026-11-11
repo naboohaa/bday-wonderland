@@ -1,4 +1,3 @@
-/* Colours used throughout the website */
 :root {
     --forest: #203c32;
     --forest-dark: #10271f;
@@ -8,7 +7,6 @@
     --gold: #b59758;
 }
 
-/* Include padding and borders in element widths */
 * {
     box-sizing: border-box;
 }
@@ -24,7 +22,6 @@ button {
     font: inherit;
 }
 
-/* Full-screen entrance */
 .entrance {
     position: relative;
     isolation: isolate;
@@ -237,7 +234,6 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Adjust spacing for phones */
 @media (max-width: 600px) {
     .entrance {
         padding: 95px 24px;
@@ -283,5 +279,570 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
     #enter-button {
         transition: none;
+    }
+}
+
+/* Keep swinging decorations inside the page */
+.entrance {
+    overflow: hidden;
+}
+
+/* Hanging decorations */
+.hanging-decorations {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hanging-item {
+    position: absolute;
+    top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform-origin: top center;
+    animation: gentle-swing var(--duration, 6s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+.hanging-item::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+
+    width: 1px;
+    height: var(--thread-length, 100px);
+
+    background: var(--gold);
+    opacity: 0.65;
+}
+
+.hanging-heart {
+    left: 5%;
+    --thread-length: 70px;
+    --duration: 6s;
+    --delay: -2s;
+}
+
+.hanging-hat {
+    left: 14%;
+    --thread-length: 230px;
+    --duration: 7.5s;
+    --delay: -3s;
+}
+
+.hanging-bottle {
+    left: 5%;
+    --thread-length: 430px;
+    --duration: 8s;
+    --delay: -5s;
+}
+
+.hanging-key {
+    left: 17%;
+    --thread-length: 540px;
+    --duration: 6.5s;
+    --delay: -1s;
+}
+
+.hanging-watch {
+    right: 5%;
+    --thread-length: 130px;
+    --duration: 7s;
+    --delay: -4s;
+}
+
+.hanging-teacup {
+    right: 14%;
+    --thread-length: 280px;
+    --duration: 6.5s;
+    --delay: -1.5s;
+}
+
+.hanging-diamond {
+    right: 5%;
+    --thread-length: 520px;
+    --duration: 7.5s;
+    --delay: -3.5s;
+}
+
+/* Small playing cards */
+.mini-card {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 62px;
+    height: 88px;
+
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    background: var(--cream);
+    color: var(--ink);
+
+    box-shadow: 0 8px 18px rgb(0 0 0 / 20%);
+}
+
+.mini-card > span:first-child {
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    font-size: 16px;
+}
+
+.mini-suit {
+    font-size: 35px;
+}
+
+.red-card {
+    color: var(--rose);
+}
+
+/* Pocket watch */
+.pocket-watch {
+    position: relative;
+
+    width: 82px;
+    height: 82px;
+    margin-top: 12px;
+    padding: 7px;
+
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: #82662f;
+
+    box-shadow: 0 8px 18px rgb(0 0 0 / 25%);
+}
+
+.pocket-watch::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+
+    width: 15px;
+    height: 15px;
+
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+
+    transform: translateX(-50%);
+}
+
+.watch-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background: var(--cream);
+}
+
+.watch-face > span {
+    position: absolute;
+}
+
+.watch-twelve {
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.watch-three {
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+}
+
+.watch-six {
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.watch-nine {
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+}
+
+.watch-twelve,
+.watch-three,
+.watch-six,
+.watch-nine {
+    font-size: 9px;
+}
+
+.watch-hand {
+    bottom: 50%;
+    left: calc(50% - 1px);
+
+    width: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+
+    transform-origin: bottom center;
+}
+
+.hour-hand {
+    height: 15px;
+    transform: rotate(125deg);
+}
+
+.minute-hand {
+    height: 22px;
+    transform: rotate(-25deg);
+}
+
+.watch-pin {
+    top: 50%;
+    left: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: var(--rose);
+    transform: translate(-50%, -50%);
+}
+
+.hatter-hat {
+    position: relative;
+    width: 105px;
+    height: 100px;
+    transform: rotate(-10deg);
+}
+
+.hat-crown {
+    position: absolute;
+    top: 0;
+    left: 17px;
+
+    width: 72px;
+    height: 82px;
+
+    border: 2px solid #adbc82;
+    border-radius: 12px 12px 5px 5px;
+
+    background: linear-gradient(
+        100deg,
+        #38503b,
+        #718753 55%,
+        #425d3d
+    );
+}
+
+.hat-crown::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    left: 0;
+
+    height: 20px;
+    background: var(--rose);
+}
+
+.hat-ticket {
+    position: absolute;
+    right: 8px;
+    bottom: 16px;
+    z-index: 1;
+
+    padding: 7px 4px;
+    border: 1px solid var(--gold);
+    background: var(--cream);
+
+    font-size: 16px;
+    transform: rotate(12deg);
+}
+
+.hat-brim {
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+
+    width: 105px;
+    height: 23px;
+
+    border: 2px solid #adbc82;
+    border-radius: 50%;
+    background: #526c42;
+
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+}
+
+.teacup-decoration {
+    position: relative;
+    width: 96px;
+    height: 85px;
+    transform: rotate(12deg);
+}
+
+.teacup {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+
+    display: grid;
+    place-items: center;
+
+    width: 62px;
+    height: 55px;
+
+    border: 2px solid var(--gold);
+    border-radius: 5px 5px 28px 28px;
+    background: #e9d3d3;
+}
+
+.teacup::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -24px;
+
+    width: 22px;
+    height: 29px;
+
+    border: 5px solid var(--gold);
+    border-left: 0;
+    border-radius: 0 18px 18px 0;
+}
+
+.teacup-flower {
+    color: var(--rose);
+    font-size: 30px;
+}
+
+.teacup-saucer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+
+    width: 84px;
+    height: 13px;
+
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: var(--cream);
+}
+
+.potion-bottle {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    width: 65px;
+    height: 80px;
+    margin-top: 25px;
+
+    border: 2px solid #bdc4b0;
+    border-radius: 18px 18px 12px 12px;
+
+    background: linear-gradient(
+        to bottom,
+        #d8e7df55 25%,
+        #922f40cc 25%
+    );
+
+    box-shadow: inset 6px 0 0 rgb(255 255 255 / 12%);
+    transform: rotate(8deg);
+}
+
+.potion-bottle::before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: 19px;
+
+    width: 23px;
+    height: 24px;
+
+    border: 2px solid #bdc4b0;
+    background: #b9cec055;
+}
+
+.potion-bottle::after {
+    content: "";
+    position: absolute;
+    top: -29px;
+    left: 18px;
+
+    width: 25px;
+    height: 10px;
+
+    border-radius: 3px;
+    background: #a48558;
+}
+
+.bottle-label {
+    padding: 5px;
+    border: 1px solid var(--gold);
+    background: var(--cream);
+
+    font-size: 11px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.gold-key {
+    position: relative;
+    width: 40px;
+    height: 100px;
+    transform: rotate(18deg);
+}
+
+.key-ring {
+    position: absolute;
+    top: 0;
+    left: 3px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 6px solid var(--gold);
+    border-radius: 50%;
+}
+
+.key-shaft {
+    position: absolute;
+    top: 30px;
+    left: 17px;
+
+    width: 7px;
+    height: 62px;
+    border-radius: 2px;
+    background: var(--gold);
+}
+
+.key-shaft::before,
+.key-shaft::after {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    width: 20px;
+    height: 7px;
+    background: var(--gold);
+}
+
+.key-shaft::before {
+    bottom: 0;
+}
+
+.key-shaft::after {
+    bottom: 15px;
+}
+
+@keyframes gentle-swing {
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@media (max-width: 1050px) {
+    .entrance {
+        padding-top: 210px;
+        padding-bottom: 100px;
+    }
+
+    .hanging-heart {
+        left: 7%;
+        --thread-length: 30px;
+    }
+
+    .hanging-hat {
+        left: 28%;
+        --thread-length: 55px;
+    }
+
+    .hanging-watch {
+        right: 30%;
+        --thread-length: 30px;
+    }
+
+    .hanging-teacup {
+        right: 7%;
+        --thread-length: 65px;
+    }
+
+    .hanging-bottle,
+    .hanging-key,
+    .hanging-diamond {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .entrance {
+        padding-top: 190px;
+    }
+
+    .hanging-heart {
+        left: 8%;
+        --thread-length: 25px;
+    }
+
+    .hanging-hat {
+        left: calc(50% - 52px);
+        --thread-length: 40px;
+    }
+
+    .hanging-watch {
+        right: 8%;
+        --thread-length: 25px;
+    }
+
+    .hanging-teacup {
+        display: none;
+    }
+
+    .mini-card {
+        width: 42px;
+        height: 60px;
+    }
+
+    .mini-card > span:first-child {
+        font-size: 12px;
+    }
+
+    .mini-suit {
+        font-size: 26px;
+    }
+
+    .hatter-hat {
+        transform: rotate(-10deg) scale(0.75);
+        transform-origin: top center;
+    }
+
+    .pocket-watch {
+        width: 62px;
+        height: 62px;
+        padding: 4px;
+    }
+
+    .hour-hand {
+        height: 11px;
+    }
+
+    .minute-hand {
+        height: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hanging-item {
+        animation: none;
     }
 }

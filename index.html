@@ -1,60 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Nabiha in Wonderland</title>
     <meta
-        name="description"
-        content="A most curious birthday invitation. Follow me down the rabbit hole."
-    >
+      name="description"
+      content="A most curious birthday invitation. Follow me down the rabbit hole."
+    />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <section class="entrance" aria-labelledby="invitation-title">
-
-            <div class="playing-card card-left" aria-hidden="true">
-                <span class="card-corner">A<br>♥</span>
-                <span class="card-suit">♥</span>
+      <section class="entrance" aria-labelledby="invitation-title">
+        <div class="hanging-decorations" aria-hidden="true">
+          <div class="hanging-item hanging-heart">
+            <div class="mini-card red-card">
+              <span>A</span>
+              <span class="mini-suit">♥</span>
             </div>
+          </div>
 
-            <div class="playing-card card-right" aria-hidden="true">
-                <span class="card-corner">A<br>♠</span>
-                <span class="card-suit">♠</span>
+          <div class="hanging-item hanging-watch">
+            <div class="pocket-watch">
+              <div class="watch-face">
+                <span class="watch-twelve">XII</span>
+                <span class="watch-three">III</span>
+                <span class="watch-six">VI</span>
+                <span class="watch-nine">IX</span>
+
+                <span class="watch-hand hour-hand"></span>
+                <span class="watch-hand minute-hand"></span>
+                <span class="watch-pin"></span>
+              </div>
             </div>
+          </div>
 
-            <div class="invitation">
-                <p class="eyebrow">A most curious invitation</p>
-
-                <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
-
-                <h1 id="invitation-title">
-                    Nabiha
-                    <span class="title-small">in</span>
-                    <span class="title-wonderland">Wonderland</span>
-                </h1>
-
-                <p class="introduction">
-                    Leave the ordinary at the door.
-                    <br>
-                    A little madness awaits…
-                </p>
-
-                <button id="enter-button" type="button">
-                    Fall down the rabbit hole
-                    <span aria-hidden="true">↓</span>
-                </button>
-
-                <p id="entrance-message" class="entrance-message" role="status"></p>
+          <div class="hanging-item hanging-hat">
+            <div class="hatter-hat">
+              <div class="hat-crown">
+                <span class="hat-ticket">10/6</span>
+              </div>
+              <div class="hat-brim"></div>
             </div>
+          </div>
 
-            <p class="footer-note">For the curious at heart</p>
-        </section>
+          <div class="hanging-item hanging-diamond">
+            <div class="mini-card red-card">
+              <span>Q</span>
+              <span class="mini-suit">♦</span>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-teacup">
+            <div class="teacup-decoration">
+              <div class="teacup">
+                <span class="teacup-flower">✿</span>
+              </div>
+              <div class="teacup-saucer"></div>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-bottle">
+            <div class="potion-bottle">
+              <span class="bottle-label">DRINK<br />ME</span>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-key">
+            <div class="gold-key">
+              <span class="key-ring"></span>
+              <span class="key-shaft"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="playing-card card-left" aria-hidden="true">
+          <span class="card-corner">A<br />♥</span>
+          <span class="card-suit">♥</span>
+        </div>
+
+        <div class="playing-card card-right" aria-hidden="true">
+          <span class="card-corner">A<br />♠</span>
+          <span class="card-suit">♠</span>
+        </div>
+
+        <div class="invitation">
+          <p class="eyebrow">A most curious invitation</p>
+
+          <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
+
+          <h1 id="invitation-title">
+            Nabiha
+            <span class="title-small">in</span>
+            <span class="title-wonderland">Wonderland</span>
+          </h1>
+
+          <p class="introduction">
+            Leave the ordinary at the door.
+            <br />
+            A little madness awaits…
+          </p>
+
+          <button id="enter-button" type="button">
+            Fall down the rabbit hole
+            <span aria-hidden="true">↓</span>
+          </button>
+
+          <p id="entrance-message" class="entrance-message" role="status"></p>
+        </div>
+
+        <p class="footer-note">For the curious at heart</p>
+      </section>
     </main>
-</body>
+  </body>
 </html>
