@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nabiha in Wonderland</title>
+    <meta
+        name="description"
+        content="A most curious birthday invitation. Follow me down the rabbit hole."
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section class="entrance" aria-labelledby="invitation-title">
+
+            <div class="playing-card card-left" aria-hidden="true">
+                <span class="card-corner">A<br>♥</span>
+                <span class="card-suit">♥</span>
+            </div>
+
+            <div class="playing-card card-right" aria-hidden="true">
+                <span class="card-corner">A<br>♠</span>
+                <span class="card-suit">♠</span>
+            </div>
+
+            <div class="invitation">
+                <p class="eyebrow">A most curious invitation</p>
+
+                <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
+
+                <h1 id="invitation-title">
+                    Nabiha
+                    <span class="title-small">in</span>
+                    <span class="title-wonderland">Wonderland</span>
+                </h1>
+
+                <p class="introduction">
+                    Leave the ordinary at the door.
+                    <br>
+                    A little madness awaits…
+                </p>
+
+                <button id="enter-button" type="button">
+                    Fall down the rabbit hole
+                    <span aria-hidden="true">↓</span>
+                </button>
+
+                <p id="entrance-message" class="entrance-message" role="status"></p>
+            </div>
+
+            <p class="footer-note">For the curious at heart</p>
+        </section>
+    </main>
+</body>
+</html>

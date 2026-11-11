@@ -1,0 +1,287 @@
+/* Colours used throughout the website */
+:root {
+    --forest: #203c32;
+    --forest-dark: #10271f;
+    --cream: #f6edda;
+    --ink: #25241f;
+    --rose: #922f40;
+    --gold: #b59758;
+}
+
+/* Include padding and borders in element widths */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--forest-dark);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+button {
+    font: inherit;
+}
+
+/* Full-screen entrance */
+.entrance {
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 85px 24px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            var(--forest) 0%,
+            var(--forest-dark) 100%
+        );
+}
+
+/* Checkerboard strips */
+.entrance::before,
+.entrance::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 24px;
+
+    background-color: var(--cream);
+    background-image: conic-gradient(
+        var(--ink) 25%,
+        var(--cream) 0 50%,
+        var(--ink) 0 75%,
+        var(--cream) 0
+    );
+    background-size: 48px 48px;
+}
+
+.entrance::before {
+    top: 0;
+}
+
+.entrance::after {
+    bottom: 0;
+}
+
+/* Central paper invitation */
+.invitation {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 640px;
+    padding: 46px 28px 24px;
+
+    text-align: center;
+    background: var(--cream);
+    border: 1px solid var(--gold);
+
+    outline: 1px solid var(--gold);
+    outline-offset: -12px;
+
+    box-shadow: 0 25px 70px rgb(0 0 0 / 25%);
+}
+
+.eyebrow {
+    margin: 0;
+
+    color: var(--rose);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.ornament {
+    margin-top: 25px;
+    color: var(--rose);
+    font-size: 18px;
+    letter-spacing: 10px;
+}
+
+h1 {
+    margin: 24px 0;
+    font-size: clamp(52px, 9vw, 88px);
+    font-weight: normal;
+    line-height: 1;
+}
+
+.title-small {
+    display: block;
+    margin: 10px 0;
+
+    font-size: 0.3em;
+    font-style: italic;
+}
+
+.title-wonderland {
+    display: block;
+    color: var(--rose);
+    font-size: 0.73em;
+    font-style: italic;
+}
+
+.introduction {
+    margin: 26px 0;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Entrance button */
+#enter-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    max-width: 100%;
+    padding: 16px 22px;
+
+    border: 1px solid var(--rose);
+    background: var(--rose);
+    color: var(--cream);
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition:
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+#enter-button:hover {
+    background: var(--forest-dark);
+    transform: translateY(-3px);
+}
+
+#enter-button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 5px;
+}
+
+.entrance-message {
+    min-height: 22px;
+    margin: 20px 0 0;
+
+    color: var(--rose);
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* Decorative playing cards */
+.playing-card {
+    position: absolute;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+
+    width: 115px;
+    height: 165px;
+
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    background: var(--cream);
+    box-shadow: 0 12px 25px rgb(0 0 0 / 20%);
+}
+
+.card-left {
+    top: 16%;
+    left: max(20px, calc(50% - 400px));
+
+    color: var(--rose);
+    transform: rotate(-19deg);
+}
+
+.card-right {
+    right: max(20px, calc(50% - 400px));
+    bottom: 17%;
+
+    color: var(--ink);
+    transform: rotate(17deg);
+}
+
+.card-corner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+}
+
+.card-suit {
+    font-size: 64px;
+}
+
+.footer-note {
+    position: absolute;
+    bottom: 38px;
+
+    margin: 0;
+    color: var(--cream);
+
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Adjust spacing for phones */
+@media (max-width: 600px) {
+    .entrance {
+        padding: 95px 24px;
+    }
+
+    .invitation {
+        padding: 36px 20px 20px;
+    }
+
+    .playing-card {
+        width: 75px;
+        height: 110px;
+    }
+
+    .card-left {
+        top: 45px;
+        left: 16px;
+    }
+
+    .card-right {
+        right: 16px;
+        bottom: 50px;
+    }
+
+    .card-corner {
+        font-size: 15px;
+    }
+
+    .card-suit {
+        font-size: 42px;
+    }
+
+    .introduction {
+        font-size: 17px;
+    }
+
+    #enter-button {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #enter-button {
+        transition: none;
+    }
+}
