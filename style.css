@@ -25,22 +25,18 @@ button {
 .entrance {
     position: relative;
     isolation: isolate;
+    overflow: hidden;
     min-height: 100svh;
-
     display: grid;
     place-items: center;
-
     padding: 85px 24px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            var(--forest) 0%,
-            var(--forest-dark) 100%
-        );
+    background: radial-gradient(
+        ellipse at center,
+        var(--forest) 0%,
+        var(--forest-dark) 100%
+    );
 }
 
-/* Checkerboard strips */
 .entrance::before,
 .entrance::after {
     content: "";
@@ -48,7 +44,6 @@ button {
     left: 0;
     width: 100%;
     height: 24px;
-
     background-color: var(--cream);
     background-image: conic-gradient(
         var(--ink) 25%,
@@ -67,28 +62,22 @@ button {
     bottom: 0;
 }
 
-/* Central paper invitation */
 .invitation {
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 640px;
     padding: 46px 28px 24px;
-
     text-align: center;
     background: var(--cream);
     border: 1px solid var(--gold);
-
     outline: 1px solid var(--gold);
     outline-offset: -12px;
-
     box-shadow: 0 25px 70px rgb(0 0 0 / 25%);
 }
 
 .eyebrow {
     margin: 0;
-
     color: var(--rose);
     font-family: Arial, sans-serif;
     font-size: 10px;
@@ -114,7 +103,6 @@ h1 {
 .title-small {
     display: block;
     margin: 10px 0;
-
     font-size: 0.3em;
     font-style: italic;
 }
@@ -133,23 +121,18 @@ h1 {
     line-height: 1.6;
 }
 
-/* Entrance button */
 #enter-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
-
     max-width: 100%;
     padding: 16px 22px;
-
     border: 1px solid var(--rose);
     background: var(--rose);
     color: var(--cream);
-
     font-size: 16px;
     cursor: pointer;
-
     transition:
         background-color 180ms ease,
         transform 180ms ease;
@@ -168,23 +151,18 @@ h1 {
 .entrance-message {
     min-height: 22px;
     margin: 20px 0 0;
-
     color: var(--rose);
     font-size: 15px;
     font-style: italic;
 }
 
-/* Decorative playing cards */
 .playing-card {
     position: absolute;
     z-index: 1;
-
     display: grid;
     place-items: center;
-
     width: 115px;
     height: 165px;
-
     border: 1px solid var(--gold);
     border-radius: 8px;
     background: var(--cream);
@@ -194,7 +172,6 @@ h1 {
 .card-left {
     top: 16%;
     left: max(20px, calc(50% - 400px));
-
     color: var(--rose);
     transform: rotate(-19deg);
 }
@@ -202,7 +179,6 @@ h1 {
 .card-right {
     right: max(20px, calc(50% - 400px));
     bottom: 17%;
-
     color: var(--ink);
     transform: rotate(17deg);
 }
@@ -211,7 +187,6 @@ h1 {
     position: absolute;
     top: 10px;
     left: 10px;
-
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -224,10 +199,8 @@ h1 {
 .footer-note {
     position: absolute;
     bottom: 38px;
-
     margin: 0;
     color: var(--cream);
-
     font-family: Arial, sans-serif;
     font-size: 9px;
     letter-spacing: 3px;
@@ -235,10 +208,6 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .entrance {
-        padding: 95px 24px;
-    }
-
     .invitation {
         padding: 36px 20px 20px;
     }
@@ -282,12 +251,6 @@ h1 {
     }
 }
 
-/* Keep swinging decorations inside the page */
-.entrance {
-    overflow: hidden;
-}
-
-/* Hanging decorations */
 .hanging-decorations {
     position: absolute;
     inset: 0;
@@ -298,11 +261,9 @@ h1 {
 .hanging-item {
     position: absolute;
     top: 24px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     transform-origin: top center;
     animation: gentle-swing var(--duration, 6s) ease-in-out infinite;
     animation-delay: var(--delay, 0s);
@@ -312,10 +273,8 @@ h1 {
     content: "";
     display: block;
     flex-shrink: 0;
-
     width: 1px;
     height: var(--thread-length, 100px);
-
     background: var(--gold);
     opacity: 0.65;
 }
@@ -369,21 +328,16 @@ h1 {
     --delay: -3.5s;
 }
 
-/* Small playing cards */
 .mini-card {
     position: relative;
-
     display: grid;
     place-items: center;
-
     width: 62px;
     height: 88px;
-
     border: 1px solid var(--gold);
     border-radius: 4px;
     background: var(--cream);
     color: var(--ink);
-
     box-shadow: 0 8px 18px rgb(0 0 0 / 20%);
 }
 
@@ -402,19 +356,15 @@ h1 {
     color: var(--rose);
 }
 
-/* Pocket watch */
 .pocket-watch {
     position: relative;
-
     width: 82px;
     height: 82px;
     margin-top: 12px;
     padding: 7px;
-
     border: 2px solid var(--gold);
     border-radius: 50%;
     background: #82662f;
-
     box-shadow: 0 8px 18px rgb(0 0 0 / 25%);
 }
 
@@ -423,13 +373,10 @@ h1 {
     position: absolute;
     top: -15px;
     left: 50%;
-
     width: 15px;
     height: 15px;
-
     border: 3px solid var(--gold);
     border-radius: 50%;
-
     transform: translateX(-50%);
 }
 
@@ -437,7 +384,6 @@ h1 {
     position: relative;
     width: 100%;
     height: 100%;
-
     border: 1px solid var(--gold);
     border-radius: 50%;
     background: var(--cream);
@@ -481,11 +427,9 @@ h1 {
 .watch-hand {
     bottom: 50%;
     left: calc(50% - 1px);
-
     width: 2px;
     border-radius: 2px;
     background: var(--ink);
-
     transform-origin: bottom center;
 }
 
@@ -502,10 +446,8 @@ h1 {
 .watch-pin {
     top: 50%;
     left: 50%;
-
     width: 6px;
     height: 6px;
-
     border-radius: 50%;
     background: var(--rose);
     transform: translate(-50%, -50%);
@@ -522,13 +464,10 @@ h1 {
     position: absolute;
     top: 0;
     left: 17px;
-
     width: 72px;
     height: 82px;
-
     border: 2px solid #adbc82;
     border-radius: 12px 12px 5px 5px;
-
     background: linear-gradient(
         100deg,
         #38503b,
@@ -543,7 +482,6 @@ h1 {
     right: 0;
     bottom: 8px;
     left: 0;
-
     height: 20px;
     background: var(--rose);
 }
@@ -553,11 +491,9 @@ h1 {
     right: 8px;
     bottom: 16px;
     z-index: 1;
-
     padding: 7px 4px;
     border: 1px solid var(--gold);
     background: var(--cream);
-
     font-size: 16px;
     transform: rotate(12deg);
 }
@@ -566,14 +502,11 @@ h1 {
     position: absolute;
     bottom: 7px;
     left: 0;
-
     width: 105px;
     height: 23px;
-
     border: 2px solid #adbc82;
     border-radius: 50%;
     background: #526c42;
-
     box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
 }
 
@@ -588,13 +521,10 @@ h1 {
     position: absolute;
     top: 5px;
     left: 8px;
-
     display: grid;
     place-items: center;
-
     width: 62px;
     height: 55px;
-
     border: 2px solid var(--gold);
     border-radius: 5px 5px 28px 28px;
     background: #e9d3d3;
@@ -605,10 +535,8 @@ h1 {
     position: absolute;
     top: 6px;
     right: -24px;
-
     width: 22px;
     height: 29px;
-
     border: 5px solid var(--gold);
     border-left: 0;
     border-radius: 0 18px 18px 0;
@@ -623,10 +551,8 @@ h1 {
     position: absolute;
     bottom: 10px;
     left: 0;
-
     width: 84px;
     height: 13px;
-
     border: 2px solid var(--gold);
     border-radius: 50%;
     background: var(--cream);
@@ -634,23 +560,18 @@ h1 {
 
 .potion-bottle {
     position: relative;
-
     display: grid;
     place-items: center;
-
     width: 65px;
     height: 80px;
     margin-top: 25px;
-
     border: 2px solid #bdc4b0;
     border-radius: 18px 18px 12px 12px;
-
     background: linear-gradient(
         to bottom,
         #d8e7df55 25%,
         #922f40cc 25%
     );
-
     box-shadow: inset 6px 0 0 rgb(255 255 255 / 12%);
     transform: rotate(8deg);
 }
@@ -660,10 +581,8 @@ h1 {
     position: absolute;
     top: -24px;
     left: 19px;
-
     width: 23px;
     height: 24px;
-
     border: 2px solid #bdc4b0;
     background: #b9cec055;
 }
@@ -673,10 +592,8 @@ h1 {
     position: absolute;
     top: -29px;
     left: 18px;
-
     width: 25px;
     height: 10px;
-
     border-radius: 3px;
     background: #a48558;
 }
@@ -685,7 +602,6 @@ h1 {
     padding: 5px;
     border: 1px solid var(--gold);
     background: var(--cream);
-
     font-size: 11px;
     line-height: 1.2;
     text-align: center;
@@ -702,10 +618,8 @@ h1 {
     position: absolute;
     top: 0;
     left: 3px;
-
     width: 34px;
     height: 34px;
-
     border: 6px solid var(--gold);
     border-radius: 50%;
 }
@@ -714,7 +628,6 @@ h1 {
     position: absolute;
     top: 30px;
     left: 17px;
-
     width: 7px;
     height: 62px;
     border-radius: 2px;
@@ -726,7 +639,6 @@ h1 {
     content: "";
     position: absolute;
     left: 0;
-
     width: 20px;
     height: 7px;
     background: var(--gold);
@@ -847,20 +759,16 @@ h1 {
     }
 }
 
-/* Keep hidden sections hidden, even when they use display: grid */
 [hidden] {
     display: none !important;
 }
 
-/* Rabbit-hole transition */
 .rabbit-hole {
     position: fixed;
     inset: 0;
     z-index: 20;
-
     display: grid;
     place-items: center;
-
     overflow: hidden;
     background: radial-gradient(
         ellipse at center,
@@ -882,18 +790,14 @@ body.is-falling {
     pointer-events: none;
 }
 
-/* Expanding rings create the feeling of travelling inward */
 .tunnel-rings span {
     position: absolute;
     top: 50%;
     left: 50%;
-
     width: 45vmin;
     height: 65vmin;
-
     border: 2px solid rgb(181 151 88 / 40%);
     border-radius: 48% 52% 55% 45%;
-
     animation: tunnel-zoom 3s linear infinite;
 }
 
@@ -921,14 +825,11 @@ body.is-falling {
     }
 }
 
-/* Objects move upward as the visitor falls */
 .falling-object {
     position: absolute;
     top: 0;
-
     font-size: clamp(50px, 10vw, 110px);
     color: var(--cream);
-
     animation: rush-past 2.4s linear infinite;
 }
 
@@ -975,22 +876,17 @@ body.is-falling {
 .falling-text {
     position: relative;
     z-index: 1;
-
     padding: 16px 24px;
     background: rgb(5 12 9 / 65%);
-
     font-size: clamp(25px, 5vw, 40px);
     font-style: italic;
     text-align: center;
 }
 
-/* Birthday reveal */
 .birthday-details {
     min-height: 100svh;
-
     display: grid;
     place-items: center;
-
     padding: 50px 24px;
     background: radial-gradient(
         ellipse at center,
@@ -1003,14 +899,11 @@ body.is-falling {
     width: 100%;
     max-width: 680px;
     padding: 45px 30px;
-
     border: 1px solid var(--gold);
     outline: 1px solid var(--gold);
     outline-offset: -12px;
-
     background: var(--cream);
     text-align: center;
-
     box-shadow: 0 25px 70px rgb(0 0 0 / 25%);
 }
 
@@ -1032,7 +925,6 @@ body.is-falling {
 
 .save-the-date {
     margin: 30px 0 20px;
-
     font-family: Arial, sans-serif;
     font-size: 11px;
     letter-spacing: 4px;
@@ -1054,7 +946,6 @@ body.is-falling {
 .date-suffix {
     display: inline-block;
     margin-left: 3px;
-
     font-size: 0.3em;
     font-style: italic;
     vertical-align: super;
@@ -1063,14 +954,12 @@ body.is-falling {
 .date-month {
     display: block;
     margin-top: 4px;
-
     font-size: clamp(44px, 9vw, 70px);
     font-style: italic;
 }
 
 .birthday-name {
     margin: 24px 0;
-
     font-family: Arial, sans-serif;
     font-size: 10px;
     letter-spacing: 3px;
@@ -1086,7 +975,6 @@ body.is-falling {
 .birthday-quote cite {
     display: block;
     margin-top: 12px;
-
     font-size: 12px;
     font-style: normal;
 }
@@ -1094,7 +982,6 @@ body.is-falling {
 .birthday-description {
     max-width: 420px;
     margin: 0 auto;
-
     font-size: 18px;
     line-height: 1.6;
 }
@@ -1108,12 +995,10 @@ body.is-falling {
 .back-button {
     margin-top: 15px;
     padding: 10px 0;
-
     border: 0;
     border-bottom: 1px solid var(--rose);
     background: transparent;
     color: var(--rose);
-
     font-size: 14px;
     cursor: pointer;
 }
@@ -1141,12 +1026,10 @@ body.is-falling {
     }
 }
 
-/* Invitation navigation */
 .invitation-actions {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-
     margin: 30px 0 20px;
 }
 
@@ -1156,14 +1039,11 @@ body.is-falling {
     align-items: center;
     justify-content: center;
     gap: 9px;
-
     min-height: 140px;
     padding: 18px 10px;
-
     border: 1px solid var(--gold);
     background: transparent;
     color: var(--ink);
-
     cursor: pointer;
     transition:
         transform 180ms ease,
@@ -1211,21 +1091,16 @@ body.is-falling {
     text-transform: uppercase;
 }
 
-/* Modal windows */
 .detail-dialog {
     position: fixed;
-
     width: min(480px, calc(100% - 32px));
     max-height: calc(100svh - 48px);
     margin: auto;
     padding: 48px 30px 32px;
-
     overflow-y: auto;
-
     border: 1px solid var(--gold);
     background: var(--cream);
     color: var(--ink);
-
     text-align: center;
     box-shadow: 0 25px 80px rgb(0 0 0 / 35%);
 }
@@ -1239,17 +1114,13 @@ body.is-falling {
     position: absolute;
     top: 10px;
     right: 12px;
-
     display: grid;
     place-items: center;
-
     width: 40px;
     height: 40px;
-
     border: 0;
     background: transparent;
     color: var(--rose);
-
     font-size: 30px;
     cursor: pointer;
 }
@@ -1257,7 +1128,6 @@ body.is-falling {
 .detail-dialog h2 {
     margin: 20px 0;
     color: var(--rose);
-
     font-size: clamp(30px, 6vw, 40px);
     font-weight: normal;
     line-height: 1.1;
@@ -1271,56 +1141,15 @@ body.is-falling {
 .detail-dialog .coming-soon {
     margin-top: 24px;
     padding: 15px;
-
     border: 1px dashed var(--gold);
     background: #ece2cd;
-
     font-size: 14px;
-}
-
-/* Clothing colour inspiration */
-.dress-palette {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    margin: 25px 0;
-}
-
-.swatch {
-    width: 30px;
-    height: 30px;
-
-    border: 1px solid rgb(0 0 0 / 15%);
-    border-radius: 50%;
-}
-
-.swatch-rose {
-    background: var(--rose);
-}
-
-.swatch-cream {
-    background: var(--cream);
-}
-
-.swatch-forest {
-    background: var(--forest);
-}
-
-.swatch-gold {
-    background: var(--gold);
-}
-
-.swatch-pink {
-    background: #d9a5aa;
 }
 
 body.dialog-open {
     overflow: hidden;
 }
 
-/* Stack buttons on small phones */
 @media (max-width: 450px) {
     .invitation-actions {
         grid-template-columns: 1fr;
@@ -1344,7 +1173,6 @@ body.dialog-open {
     }
 }
 
-/* RSVP form */
 .rsvp-form {
     display: grid;
     gap: 10px;
@@ -1368,12 +1196,10 @@ body.dialog-open {
     width: 100%;
     min-width: 0;
     padding: 12px;
-
     border: 1px solid var(--gold);
     border-radius: 0;
     background: #fffaf0;
     color: var(--ink);
-
     font: inherit;
     font-size: 16px;
 }
@@ -1393,11 +1219,9 @@ body.dialog-open {
 .rsvp-submit {
     margin-top: 14px;
     padding: 15px 20px;
-
     border: 1px solid var(--rose);
     background: var(--rose);
     color: var(--cream);
-
     font: inherit;
     font-size: 17px;
     cursor: pointer;
@@ -1429,14 +1253,11 @@ body.dialog-open {
     color: var(--rose);
 }
 
-/* Wishlist */
 .wishlist-items {
     display: grid;
     gap: 14px;
-
     margin: 26px 0;
     padding: 0;
-
     list-style: none;
     text-align: left;
 }
@@ -1445,9 +1266,7 @@ body.dialog-open {
     display: grid;
     grid-template-columns: 28px minmax(0, 1fr);
     gap: 12px;
-
     padding: 18px;
-
     border: 1px solid var(--gold);
     background: #fffaf0;
 }
@@ -1461,7 +1280,6 @@ body.dialog-open {
 .wishlist-item h3 {
     margin: 0 0 8px;
     color: var(--rose);
-
     font-size: 21px;
     font-weight: normal;
 }
@@ -1474,10 +1292,8 @@ body.dialog-open {
 
 .wishlist-link {
     display: inline-block;
-
     margin-top: 12px;
     padding: 5px 0;
-
     color: var(--rose);
     font-size: 15px;
     text-decoration: underline;
@@ -1504,9 +1320,283 @@ body.dialog-open {
     height: 1px;
     padding: 0;
     margin: -1px;
-
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
+}
+
+.wardrobe-dialog {
+    width: min(960px, calc(100% - 24px));
+    padding: 42px 28px 24px;
+}
+
+.wardrobe-dialog h2 {
+    margin-bottom: 10px;
+}
+
+.detail-dialog .wardrobe-intro {
+    margin-top: 0;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.wardrobe-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 26px;
+    align-items: center;
+}
+
+.wardrobe-stage {
+    --stage-colour: #dce0cd;
+    --stage-accent: #637251;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 20px 14px 38px;
+    border: 1px solid var(--gold);
+    border-radius: 160px 160px 12px 12px;
+    background: radial-gradient(
+        ellipse at 50% 35%,
+        #fffaf0,
+        var(--stage-colour)
+    );
+}
+
+.wardrobe-stage::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    z-index: -1;
+    border: 1px solid var(--gold);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.wardrobe-stage::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    z-index: -1;
+    background: conic-gradient(
+        var(--stage-accent) 25%,
+        transparent 0 50%,
+        var(--stage-accent) 0 75%,
+        transparent 0
+    );
+    background-size: 28px 28px;
+    opacity: 0.12;
+}
+
+.avatar-frame {
+    display: grid;
+    place-items: center;
+    height: clamp(340px, 48svh, 480px);
+}
+
+#wardrobe-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 10%));
+}
+
+#wardrobe-avatar.is-changing {
+    animation: outfit-reveal 420ms ease-out both;
+}
+
+@keyframes outfit-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.wardrobe-sparkle {
+    position: absolute;
+    color: var(--stage-accent);
+    pointer-events: none;
+}
+
+.sparkle-one {
+    top: 25%;
+    left: 8%;
+    font-size: 30px;
+}
+
+.sparkle-two {
+    top: 45%;
+    right: 7%;
+    font-size: 24px;
+}
+
+.stage-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 12px;
+    right: 12px;
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+}
+
+.wardrobe-controls {
+    min-width: 0;
+    text-align: left;
+}
+
+.detail-dialog .wardrobe-label {
+    margin: 0 0 14px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.character-picker {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.character-picker button {
+    min-height: 44px;
+    padding: 10px 8px;
+    border: 1px solid var(--gold);
+    background: #fffaf0;
+    color: var(--ink);
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.character-picker button:hover {
+    transform: translateY(-2px);
+    background: #eadcc3;
+}
+
+.character-picker button[aria-pressed="true"] {
+    background: var(--rose);
+    color: var(--cream);
+    border-color: var(--rose);
+}
+
+.character-picker button:focus-visible,
+.surprise-look:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.surprise-look {
+    margin-top: 20px;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid var(--rose);
+    background: transparent;
+    color: var(--rose);
+    font: inherit;
+    cursor: pointer;
+}
+
+.detail-dialog .wardrobe-status {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: var(--rose);
+}
+
+.wardrobe-status:empty {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .wardrobe-dialog {
+        padding: 42px 20px 24px;
+    }
+
+    .wardrobe-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .wardrobe-stage {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .avatar-frame {
+        height: 340px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .character-picker button {
+        transition: none;
+    }
+
+    #wardrobe-avatar.is-changing {
+        animation: none;
+    }
+}
+
+.theme-rules {
+    max-width: 720px;
+    margin: 22px auto 28px;
+    padding: 18px 22px;
+    border: 1px solid var(--gold);
+    background: #eee2ce;
+    text-align: center;
+}
+
+.detail-dialog .theme-rules p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.detail-dialog .theme-rules p + p {
+    margin-top: 14px;
+}
+
+.theme-rules strong {
+    color: var(--rose);
+}
+
+.detail-dialog .theme-rules .theme-warning {
+    padding: 12px 0;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    color: var(--rose);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.look-heading {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--gold);
+}
+
+.look-heading h3 {
+    margin: 0;
+    color: var(--rose);
+    font-size: 28px;
+    font-weight: normal;
 }

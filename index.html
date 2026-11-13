@@ -301,36 +301,103 @@
 
     <dialog
       id="dress-dialog"
-      class="detail-dialog"
+      class="detail-dialog wardrobe-dialog"
       aria-labelledby="dress-title"
     >
-      <button class="dialog-close" type="button" aria-label="Close dress code">
+      <button class="dialog-close" type="button" aria-label="Close wardrobe">
         ×
       </button>
 
       <p class="eyebrow">Through the looking glass</p>
-      <h2 id="dress-title">Wear a little wonder</h2>
-
-      <p>
-        Think vintage tea party meets Wonderland: bows, lace, waistcoats,
-        playful hats, floral details, or a little playing-card magic.
+      <h2 id="dress-title">The Wonderland wardrobe</h2>
+      <p class="wardrobe-intro">
+        Pick a character to explore the outfit inspiration.
       </p>
 
-      <div
-        class="dress-palette"
-        role="img"
-        aria-label="Colour inspiration: rose red, cream, forest green, antique gold, and dusty pink"
-      >
-        <span class="swatch swatch-rose"></span>
-        <span class="swatch swatch-cream"></span>
-        <span class="swatch swatch-forest"></span>
-        <span class="swatch swatch-gold"></span>
-        <span class="swatch swatch-pink"></span>
+      <div class="theme-rules">
+        <p>
+          You don't have to dress as a specific character, but your outfit
+          <strong>must match the Wonderland vibes and colour palette</strong>.
+          Think whimsical layers, lace, bows, waistcoats, and curious
+          accessories.
+        </p>
+
+        <p class="theme-warning">Strictly NO Queen of Hearts costumes. ♥</p>
+
+        <p>
+          And yes, I <strong>WILL be mad</strong> if you're not on theme. I'd
+          rather you spend money on your outfit than on a gift. Your commitment
+          to the dress code is my present!
+        </p>
       </div>
 
-      <p class="coming-soon">
-        Outfit inspiration for now — the final clothing theme is coming soon.
-      </p>
+      <div class="wardrobe-layout">
+        <div id="wardrobe-stage" class="wardrobe-stage">
+          <span class="wardrobe-sparkle sparkle-one" aria-hidden="true">✦</span>
+          <span class="wardrobe-sparkle sparkle-two" aria-hidden="true">✧</span>
+
+          <div id="avatar-frame" class="avatar-frame">
+            <img
+              id="wardrobe-avatar"
+              src="images/outfits/nabiha.png"
+              alt="Illustrated Nabiha wearing an olive hijab and floral dress"
+              width="1024"
+              height="1536"
+            />
+          </div>
+
+          <span class="stage-caption" aria-hidden="true">
+            A little imagination goes a long way
+          </span>
+        </div>
+
+        <div class="wardrobe-controls">
+          <p id="character-picker-label" class="wardrobe-label">
+            Choose your character
+          </p>
+
+          <div
+            class="character-picker"
+            role="group"
+            aria-labelledby="character-picker-label"
+          >
+            <button type="button" data-look="nabiha" aria-pressed="true">
+              Just me
+            </button>
+            <button type="button" data-look="mad-hatter" aria-pressed="false">
+              Mad Hatter
+            </button>
+            <button type="button" data-look="caterpillar" aria-pressed="false">
+              Caterpillar
+            </button>
+            <button type="button" data-look="dormouse" aria-pressed="false">
+              Dormouse
+            </button>
+            <button type="button" data-look="march-hare" aria-pressed="false">
+              March Hare
+            </button>
+            <button type="button" data-look="white-rabbit" aria-pressed="false">
+              White Rabbit
+            </button>
+            <button type="button" data-look="cheshire-cat" aria-pressed="false">
+              Cheshire Cat
+            </button>
+            <button type="button" data-look="tweedle" aria-pressed="false">
+              Tweedle twins
+            </button>
+          </div>
+
+          <div class="look-heading">
+            <h3 id="look-name">Just me</h3>
+          </div>
+
+          <button id="surprise-look" class="surprise-look" type="button">
+            ✧ Surprise me
+          </button>
+        </div>
+      </div>
+
+      <p id="wardrobe-status" class="wardrobe-status" role="status"></p>
     </dialog>
   </body>
 </html>
