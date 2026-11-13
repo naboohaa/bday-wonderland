@@ -1,10 +1,21 @@
 :root {
-    --forest: #203c32;
-    --forest-dark: #10271f;
-    --cream: #f6edda;
-    --ink: #25241f;
-    --rose: #922f40;
-    --gold: #b59758;
+    --forest: #182d27;
+    --forest-dark: #090f0d;
+    --cream: #eee7ef;
+    --ink: #171219;
+    --rose: #e4a0b3;
+    --gold: #9f8467;
+
+    --background: #0c090e;
+    --panel: #19121d;
+    --panel-raised: #251b2b;
+    --wine: #70233e;
+    --wine-light: #963550;
+    --muted: #bfb0c2;
+
+    --font-heading: "Cinzel", Georgia, serif;
+    --font-story: "Cormorant Garamond", Georgia, serif;
+    --font-body: "DM Sans", Arial, sans-serif;
 }
 
 * {
@@ -1599,4 +1610,417 @@ body.dialog-open {
     color: var(--rose);
     font-size: 28px;
     font-weight: normal;
+}
+
+body {
+    background: var(--background);
+    color: var(--cream);
+    font-family: var(--font-story);
+}
+
+.entrance,
+.birthday-details {
+    background:
+        radial-gradient(
+            ellipse at 12% 20%,
+            rgb(112 35 62 / 30%),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 90% 80%,
+            rgb(35 69 55 / 40%),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #080d0b,
+            #151019 55%,
+            #0a100e
+        );
+}
+
+.entrance::before,
+.entrance::after {
+    background-color: #bfb5c1;
+    background-image: conic-gradient(
+        #141016 25%,
+        #bfb5c1 0 50%,
+        #141016 0 75%,
+        #bfb5c1 0
+    );
+    opacity: 0.7;
+}
+
+.invitation,
+.birthday-paper {
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgb(112 35 62 / 18%),
+            transparent 65%
+        ),
+        linear-gradient(
+            150deg,
+            #211724,
+            #151018 65%,
+            #101713
+        );
+
+    color: var(--cream);
+    border-color: #806575;
+    outline-color: rgb(159 132 103 / 55%);
+
+    box-shadow:
+        0 30px 90px rgb(0 0 0 / 55%),
+        0 0 55px rgb(112 35 62 / 12%);
+}
+
+h1 {
+    font-family: var(--font-story);
+    font-weight: 500;
+}
+
+.title-wonderland {
+    color: #edb0c3;
+    text-shadow: 0 0 30px rgb(228 160 179 / 15%);
+}
+
+.title-small {
+    color: var(--muted);
+}
+
+.eyebrow,
+.footer-note,
+.save-the-date,
+.birthday-name,
+.button-caption,
+.detail-dialog .wardrobe-label,
+.character-picker button,
+.detail-dialog .theme-rules .theme-warning {
+    font-family: var(--font-heading);
+}
+
+.eyebrow,
+.ornament {
+    color: var(--rose);
+}
+
+.introduction,
+.birthday-description {
+    color: #e1d4e3;
+    font-size: 21px;
+}
+
+.footer-note,
+.party-details,
+.optional,
+.birthday-quote cite {
+    color: var(--muted);
+}
+
+.birthday-date,
+.detail-dialog h2 {
+    font-family: var(--font-story);
+    color: #edb0c3;
+}
+
+.birthday-quote {
+    color: var(--cream);
+    font-size: 29px;
+}
+
+#enter-button,
+.rsvp-submit,
+.detail-button:first-child {
+    border-color: #b65b78;
+    background: linear-gradient(
+        135deg,
+        #842c49,
+        #571a31
+    );
+    color: #fff0f5;
+}
+
+#enter-button:hover,
+.rsvp-submit:hover,
+.detail-button:first-child:hover {
+    background: #963550;
+    box-shadow: 0 0 25px rgb(150 53 80 / 25%);
+}
+
+#enter-button,
+.rsvp-submit {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.detail-button {
+    background: #201723;
+    border-color: #705969;
+    color: var(--cream);
+}
+
+.detail-button:hover {
+    background: #342137;
+    border-color: var(--rose);
+}
+
+.button-title {
+    font-family: var(--font-story);
+    font-size: 27px;
+}
+
+.button-symbol,
+.back-button,
+.surprise-look,
+.wishlist-link,
+.dialog-close {
+    color: var(--rose);
+}
+
+.back-button,
+.surprise-look {
+    border-bottom-color: #95677b;
+}
+
+.detail-dialog {
+    background:
+        radial-gradient(
+            ellipse at top left,
+            rgb(112 35 62 / 20%),
+            transparent 65%
+        ),
+        #17121b;
+
+    border-color: #927083;
+    color: var(--cream);
+
+    box-shadow:
+        0 30px 100px rgb(0 0 0 / 70%),
+        0 0 45px rgb(112 35 62 / 15%);
+}
+
+.detail-dialog::backdrop {
+    background: rgb(3 5 4 / 88%);
+    backdrop-filter: blur(8px);
+}
+
+.detail-dialog p:not(.eyebrow) {
+    font-family: var(--font-story);
+    font-size: 19px;
+}
+
+.detail-dialog .coming-soon,
+.theme-rules {
+    background: #261923;
+    border-color: #866174;
+    color: #e1d3e3;
+}
+
+.detail-dialog .theme-rules p {
+    font-size: 18px;
+}
+
+.detail-dialog .theme-rules .theme-warning {
+    color: #ffc0d0;
+    border-color: #795265;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.theme-rules strong {
+    color: #ffc0d0;
+}
+
+.rsvp-form label {
+    color: #eee1ef;
+    font-size: 18px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+    background: #100d14;
+    border-color: #775c70;
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 16px;
+    color-scheme: dark;
+}
+
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder {
+    color: #ac9cb0;
+}
+
+.rsvp-status[data-state="success"] {
+    color: #a6d4b1;
+}
+
+.rsvp-status[data-state="error"] {
+    color: #ffadc2;
+}
+
+.wishlist-item {
+    background: #221927;
+    border-color: #70596c;
+}
+
+.wishlist-item h3,
+.wishlist-symbol,
+.look-heading h3 {
+    color: #edb0c3;
+}
+
+.wishlist-link:hover {
+    color: #ffcfdf;
+}
+
+.detail-dialog .wishlist-note {
+    color: var(--muted);
+}
+
+.character-picker button {
+    background: #211826;
+    border-color: #755b70;
+    color: #e8dce9;
+
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.character-picker button:hover {
+    background: #39233c;
+}
+
+.character-picker button[aria-pressed="true"] {
+    background: #70233e;
+    border-color: #e4a0b3;
+    color: #fff0f5;
+
+    box-shadow: 0 0 18px rgb(112 35 62 / 25%);
+}
+
+.look-heading {
+    border-color: #70596c;
+}
+
+.look-heading h3 {
+    font-family: var(--font-story);
+    font-size: 32px;
+}
+
+.wardrobe-stage {
+    background:
+        radial-gradient(
+            ellipse at 50% 35%,
+            color-mix(
+                in srgb,
+                var(--stage-accent) 28%,
+                #211625
+            ),
+            #0d0b11 85%
+        );
+
+    border-color: #9f8467;
+}
+
+.wardrobe-stage::before {
+    border-color: rgb(159 132 103 / 60%);
+}
+
+.wardrobe-stage::after {
+    background: conic-gradient(
+        #c9b9ca 25%,
+        #100d14 0 50%,
+        #c9b9ca 0 75%,
+        #100d14 0
+    );
+    background-size: 28px 28px;
+    opacity: 0.15;
+}
+
+.wardrobe-sparkle {
+    color: #d3a2bd;
+}
+
+.stage-caption {
+    color: #cfc0d2;
+}
+
+#wardrobe-avatar {
+    filter: drop-shadow(0 12px 15px rgb(0 0 0 / 35%));
+}
+
+.detail-dialog .wardrobe-status {
+    color: #dcb0c4;
+}
+
+.rabbit-hole {
+    background: radial-gradient(
+        ellipse at center,
+        #020403,
+        #101711 60%,
+        #291322
+    );
+}
+
+.falling-text {
+    background: rgb(8 5 11 / 70%);
+    color: #f1dbea;
+    font-family: var(--font-story);
+}
+
+.tunnel-rings span {
+    border-color: rgb(176 116 150 / 35%);
+}
+
+.falling-heart,
+.falling-diamond {
+    color: #d17398;
+}
+
+.playing-card,
+.mini-card {
+    background: #ded8e1;
+    color: #201723;
+    border-color: #927083;
+}
+
+.card-left,
+.red-card {
+    color: #842c49;
+}
+
+.watch-face {
+    background: #ded8e1;
+    color: #201723;
+}
+
+.watch-hand {
+    background: #201723;
+}
+
+.watch-pin {
+    background: #842c49;
+}
+
+.hat-ticket,
+.bottle-label {
+    background: #ded8e1;
+    color: #201723;
+}
+
+.teacup {
+    background: #9f637d;
+}
+
+.teacup-flower {
+    color: #f5d4e1;
+}
+
+.teacup-saucer {
+    background: #c7adbf;
 }
