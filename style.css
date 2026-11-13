@@ -1343,3 +1343,88 @@ body.dialog-open {
         transition: none;
     }
 }
+
+/* RSVP form */
+.rsvp-form {
+    display: grid;
+    gap: 10px;
+    margin-top: 26px;
+    text-align: left;
+}
+
+.rsvp-form label {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.optional {
+    color: #62624e;
+    font-size: 13px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    background: #fffaf0;
+    color: var(--ink);
+
+    font: inherit;
+    font-size: 16px;
+}
+
+.rsvp-form textarea {
+    resize: vertical;
+}
+
+.rsvp-form input:focus-visible,
+.rsvp-form select:focus-visible,
+.rsvp-form textarea:focus-visible,
+.rsvp-submit:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.rsvp-submit {
+    margin-top: 14px;
+    padding: 15px 20px;
+
+    border: 1px solid var(--rose);
+    background: var(--rose);
+    color: var(--cream);
+
+    font: inherit;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.rsvp-submit:hover {
+    background: var(--forest-dark);
+}
+
+.rsvp-submit:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.detail-dialog .rsvp-status {
+    margin: 18px 0 0;
+    font-size: 15px;
+}
+
+.rsvp-status:empty {
+    display: none;
+}
+
+.rsvp-status[data-state="success"] {
+    color: var(--forest);
+}
+
+.rsvp-status[data-state="error"] {
+    color: var(--rose);
+}

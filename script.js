@@ -79,3 +79,61 @@ detailDialogs.forEach((dialog) => {
         document.body.classList.remove("dialog-open");
     });
 });
+
+const rsvpForm = document.querySelector("#rsvp-form");
+const rsvpSubmit = document.querySelector("#rsvp-submit");
+const rsvpStatus = document.querySelector("#rsvp-status");
+
+let isSubmittingRsvp = false;
+
+rsvpForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (isSubmittingRsvp) {
+        return;
+    }
+
+    isSubmittingRsvp = true;
+    rsvpSubmit.disabled = true;
+    rsvpSubmit.textContent = "Sending…";
+
+    rsvpForm.setAttribute("aria-busy", "true");
+    rsvpStatus.dataset.state = "pending";
+    rsvpStatus.textContent = "Delivering your reply to Wonderland…";
+
+    const formData = new FormData(rsvpForm);
+    const attendance = formData.get("attendance");
+
+    try {
+        const response = await fetch(rsvpForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("RSVP submission failed.");
+        }
+
+        rsvpStatus.dataset.state = "success";
+
+        rsvpStatus.textContent = attendance === "Yes"
+            ? "Your RSVP has arrived! I can't wait to celebrate with you. ♥"
+            : "Your RSVP has arrived. You'll be missed! ♥";
+
+        rsvpForm.reset();
+        rsvpForm.hidden = true;
+    } catch (error) {
+        rsvpStatus.dataset.state = "error";
+        rsvpStatus.textContent =
+            "We couldn't confirm your RSVP. Please try again shortly. " +
+            "If this keeps happening, contact Nabiha directly.";
+    } finally {
+        isSubmittingRsvp = false;
+        rsvpSubmit.disabled = false;
+        rsvpSubmit.textContent = "Send my RSVP ♥";
+        rsvpForm.removeAttribute("aria-busy");
+    }
+});

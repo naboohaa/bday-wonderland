@@ -216,11 +216,54 @@
       <p class="eyebrow">You're invited</p>
       <h2 id="rsvp-title">A seat at the table</h2>
 
-      <p>Will you be joining me down the rabbit hole on January 9?</p>
+      <p>Will you be joining me in Wonderland on January 9?</p>
 
-      <p class="coming-soon">
-        RSVP opens soon. The response link will appear here.
-      </p>
+      <form
+        id="rsvp-form"
+        class="rsvp-form"
+        action="https://formspree.io/f/mgakeyzw"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Wonderland birthday RSVP"
+        />
+
+        <label for="guest-name">Your name</label>
+        <input
+          id="guest-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          maxlength="100"
+          required
+        />
+
+        <label for="guest-attendance">Will you be coming?</label>
+        <select id="guest-attendance" name="attendance" required>
+          <option value="" disabled selected>Choose your answer</option>
+          <option value="Yes">Yes, save me a seat!</option>
+          <option value="No">Sadly, I can't make it</option>
+        </select>
+
+        <label for="guest-dietary">
+          Dietary requirements <span class="optional">(optional)</span>
+        </label>
+        <textarea
+          id="guest-dietary"
+          name="dietary_requirements"
+          rows="3"
+          maxlength="1000"
+          placeholder="Anything you'd like me to know?"
+        ></textarea>
+
+        <button id="rsvp-submit" class="rsvp-submit" type="submit">
+          Send my RSVP ♥
+        </button>
+      </form>
+
+      <p id="rsvp-status" class="rsvp-status" role="status"></p>
     </dialog>
 
     <dialog
@@ -278,4 +321,3 @@
     </dialog>
   </body>
 </html>
-      
