@@ -943,30 +943,30 @@ body.is-falling {
 }
 
 .birthday-date {
-    margin: 0;
-    color: var(--rose);
-    font-weight: normal;
-    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    gap: 0.3em;
+    font-size: clamp(24px, 6vw, 42px);
+    white-space: nowrap;
 }
 
-.date-day {
-    display: block;
-    font-size: clamp(90px, 18vw, 140px);
+.date-day,
+.date-month,
+.date-year {
+    display: inline;
+    margin: 0;
+    font-size: inherit;
 }
 
 .date-suffix {
-    display: inline-block;
-    margin-left: 3px;
-    font-size: 0.3em;
-    font-style: italic;
-    vertical-align: super;
+    font-size: 0.45em;
 }
 
-.date-month {
-    display: block;
-    margin-top: 4px;
-    font-size: clamp(44px, 9vw, 70px);
-    font-style: italic;
+.date-year {
+    font-family: inherit;
+    letter-spacing: normal;
 }
 
 .birthday-name {
