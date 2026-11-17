@@ -435,25 +435,3 @@
 .red-card {
   color: #a42935;
 }
-
-.card-roses {
-  position: absolute;
-  z-index: 3;
-  width: clamp(90px, 18vw, 145px);
-  height: auto;
-  pointer-events: none;
-  user-select: none;
-  filter: drop-shadow(0 5px 5px rgb(0 0 0 / 30%));
-}
-
-.roses-top {
-  top: -32px;
-  left: -34px;
-  transform: rotate(-12deg);
-}
-
-.roses-bottom {
-  right: -34px;
-  bottom: -32px;
-  transform: rotate(168deg);
-}

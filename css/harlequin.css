@@ -9,10 +9,16 @@
   --forest-dark: #191d18;
 }
 
-body,
+body {
+  background: linear-gradient(rgb(12 3 3 / 82%), rgb(12 3 3 / 82%)),
+    url("../images/card-pattern.png") center top / cover no-repeat;
+  min-height: 100vh;
+  color: #f2ecdf;
+}
+
 .entrance,
 .birthday-details {
-  background: radial-gradient(ellipse at center, #421414, #170707 80%);
+  background: transparent;
   color: #f2ecdf;
 }
 
@@ -27,18 +33,19 @@ body,
 
 .invitation,
 .birthday-paper {
-  border: 20px solid transparent;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+
+  border: 1px solid #292725;
   border-radius: 3px;
-
   outline: 1px solid #9c825b;
-  outline-offset: -28px;
+  outline-offset: -12px;
 
-  background: linear-gradient(135deg, #f8f3e8, #eee5d5) padding-box,
-    url("../images/card-pattern.png") center / 100% 100% no-repeat border-box;
+  background: linear-gradient(135deg, #f8f3e8, #eee5d5);
 
   color: #292725;
-
-  box-shadow: 0 2px 5px rgb(60 39 26 / 8%), 0 18px 50px rgb(60 39 26 / 14%);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 30%);
 }
 
 .invitation::after,
@@ -247,12 +254,4 @@ h1,
 
 .watch-pin {
   background: #922f34;
-}
-
-@media (max-width: 600px) {
-  .invitation,
-  .birthday-paper {
-    border-width: 14px;
-    outline-offset: -21px;
-  }
 }
