@@ -231,8 +231,13 @@
 
 @media (prefers-reduced-motion: reduce) {
     .rabbit-hole,
-    .rabbit-hole::before,
+    .spiral-art,
+    .tumbling-object,
     body.is-falling .entrance {
         animation: none;
+    }
+
+    .tumbling-object {
+        display: none;
     }
 }

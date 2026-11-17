@@ -141,20 +141,48 @@
       </section>
 
       <div id="rabbit-hole" class="rabbit-hole" hidden>
-        <div class="tunnel-rings" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="spiral-tunnel" aria-hidden="true">
+          <svg
+            class="spiral-art"
+            viewBox="-600 -600 1200 1200"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <g id="spiral-lines"></g>
+          </svg>
+
+          <div class="tunnel-opening"></div>
         </div>
 
         <div class="falling-objects" aria-hidden="true">
-          <span class="falling-object falling-heart">♥</span>
-          <span class="falling-object falling-spade">♠</span>
-          <span class="falling-object falling-clock">◷</span>
-          <span class="falling-object falling-diamond">♦</span>
+          <span
+            class="tumbling-object"
+            style="--x: -45vw; --y: -35vh; --delay: -0.3s; --spin: -220deg"
+            >🪑</span
+          >
+
+          <span
+            class="tumbling-object"
+            style="--x: 42vw; --y: 30vh; --delay: -0.9s; --spin: 190deg"
+            >🫖</span
+          >
+
+          <span
+            class="tumbling-object"
+            style="--x: -32vw; --y: 45vh; --delay: -1.5s; --spin: -150deg"
+            >📚</span
+          >
+
+          <span
+            class="tumbling-object"
+            style="--x: 38vw; --y: -42vh; --delay: -2.1s; --spin: 250deg"
+            >🕰️</span
+          >
+
+          <span
+            class="tumbling-object"
+            style="--x: -48vw; --y: 10vh; --delay: -2.7s; --spin: 160deg"
+            >🗝️</span
+          >
         </div>
 
         <p class="falling-text" role="status">down, down, down…</p>
@@ -194,10 +222,6 @@
           </h2>
 
           <p class="birthday-name">Nabiha's 20th birthday</p>
-
-          <blockquote class="birthday-quote">
-            “All ways here are my ways!”
-          </blockquote>
 
           <p class="birthday-description">
             See you in Wonderland for some birthday madness.
