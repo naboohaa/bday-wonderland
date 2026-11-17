@@ -221,7 +221,7 @@ h1,
 }
 
 .wardrobe-stage::after {
-  background: url("../images/card-pattern.jpg") center / 100px 150px repeat;
+  background: url("../images/card-pattern.png") center / 80% ;
   opacity: 0.3;
 }
 
