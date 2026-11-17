@@ -1,0 +1,155 @@
+.rabbit-hole {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--cream);
+  background: radial-gradient(ellipse at center, #020403, #101711 60%, #291322);
+}
+
+body.is-falling {
+  overflow: hidden;
+}
+
+.tunnel-rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.falling-objects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tunnel-rings span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45vmin;
+  height: 65vmin;
+  border: 2px solid rgb(181 151 88 / 40%);
+  border-radius: 48% 52% 55% 45%;
+  animation: tunnel-zoom 3s linear infinite;
+  border-color: rgb(176 116 150 / 35%);
+}
+
+.tunnel-rings span:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.tunnel-rings span:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.falling-object {
+  position: absolute;
+  top: 0;
+  font-size: clamp(50px, 10vw, 110px);
+  color: var(--cream);
+  animation: rush-past 2.4s linear infinite;
+}
+
+.falling-heart {
+  left: 13%;
+  animation-delay: -0.5s;
+  color: #d17398;
+}
+
+.falling-spade {
+  right: 16%;
+  animation-delay: -1.6s;
+}
+
+.falling-clock {
+  left: 28%;
+  color: var(--gold);
+  animation-delay: -2s;
+}
+
+.falling-diamond {
+  right: 30%;
+  animation-delay: -1s;
+  color: #d17398;
+}
+
+.falling-text {
+  position: relative;
+  z-index: 1;
+  padding: 16px 24px;
+  font-size: clamp(25px, 5vw, 40px);
+  font-style: italic;
+  text-align: center;
+  background: rgb(8 5 11 / 70%);
+  color: #f1dbea;
+  font-family: var(--font-story);
+}
+
+@keyframes gentle-swing {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes tunnel-zoom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(6) rotate(75deg);
+  }
+}
+
+@keyframes rush-past {
+  0% {
+    opacity: 0;
+    transform: translateY(110svh) rotate(-30deg) scale(0.5);
+  }
+
+  15%, 80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30svh) rotate(160deg) scale(1.3);
+  }
+}
+
+@keyframes invitation-arrives {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes outfit-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

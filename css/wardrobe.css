@@ -1,0 +1,238 @@
+.wardrobe-dialog {
+  width: min(960px, calc(100% - 24px));
+  padding: 42px 28px 24px;
+}
+
+.wardrobe-dialog h2 {
+  margin-bottom: 10px;
+}
+
+.detail-dialog .wardrobe-intro {
+  margin-top: 0;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.wardrobe-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 28px;
+  margin-top: 26px;
+  align-items: center;
+}
+
+.wardrobe-stage {
+  --stage-accent: #637251;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 20px 14px 38px;
+  border: 1px solid var(--gold);
+  border-radius: 160px 160px 12px 12px;
+  background: radial-gradient( ellipse at 50% 35%, color-mix(in srgb, var(--stage-accent) 28%, #211625), #0d0b11 85% );
+  border-color: #9f8467;
+}
+
+.wardrobe-stage::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  z-index: -1;
+  border: 1px solid var(--gold);
+  border-radius: inherit;
+  pointer-events: none;
+  border-color: rgb(159 132 103 / 60%);
+}
+
+.wardrobe-stage::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  z-index: -1;
+  background: conic-gradient( #c9b9ca 25%, #100d14 0 50%, #c9b9ca 0 75%, #100d14 0 );
+  background-size: 28px 28px;
+  opacity: 0.15;
+}
+
+.avatar-frame {
+  display: grid;
+  place-items: center;
+  height: clamp(340px, 48svh, 480px);
+}
+
+#wardrobe-avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 12px 15px rgb(0 0 0 / 35%));
+}
+
+#wardrobe-avatar.is-changing {
+  animation: outfit-reveal 420ms ease-out both;
+}
+
+.wardrobe-sparkle {
+  position: absolute;
+  pointer-events: none;
+  color: #d3a2bd;
+}
+
+.sparkle-one {
+  top: 25%;
+  left: 8%;
+  font-size: 30px;
+}
+
+.sparkle-two {
+  top: 45%;
+  right: 7%;
+  font-size: 24px;
+}
+
+.stage-caption {
+  position: absolute;
+  bottom: 15px;
+  left: 12px;
+  right: 12px;
+  font-size: 11px;
+  font-style: italic;
+  text-align: center;
+  color: #cfc0d2;
+}
+
+.wardrobe-controls {
+  min-width: 0;
+  text-align: left;
+}
+
+.detail-dialog .wardrobe-label {
+  margin: 0 0 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+}
+
+.character-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.character-picker button {
+  min-height: 44px;
+  padding: 10px 8px;
+  border: 1px solid var(--gold);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  line-height: 1.6;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 0;
+  background: #1c1818;
+  border-color: #786560;
+  color: #f0e7e7;
+}
+
+.character-picker button:hover {
+  transform: translateY(-2px);
+  background: #352021;
+}
+
+.character-picker button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.surprise-look:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.surprise-look {
+  margin-top: 20px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--rose);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  color: var(--rose);
+  border-bottom-color: #95677b;
+}
+
+.detail-dialog .wardrobe-status {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #dcb0c4;
+}
+
+.wardrobe-status:empty {
+  display: none;
+}
+
+.theme-rules {
+  max-width: 720px;
+  margin: 22px auto 28px;
+  padding: 18px 22px;
+  border: 1px solid var(--gold);
+  text-align: center;
+  color: #e1d3e3;
+  background: #211819;
+  border-color: #786560;
+}
+
+.detail-dialog .theme-rules p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.detail-dialog .theme-rules p + p {
+  margin-top: 14px;
+}
+
+.detail-dialog .theme-rules .theme-warning {
+  padding: 12px 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  font-weight: bold;
+  color: #ffc0d0;
+  letter-spacing: 1px;
+  border-color: #806647;
+  font-family: var(--font-heading);
+  font-size: 18px;
+}
+
+.look-heading {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--gold);
+  border-color: #806647;
+}
+
+.look-heading h3 {
+  margin: 0;
+  color: #edb0bb;
+  font-family: var(--font-story);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.theme-rules strong {
+  color: #ffc0d0;
+}
+
+.character-picker button[aria-pressed="true"] {
+  box-shadow: 0 0 18px rgb(112 35 62 / 25%);
+  background: #8b202b;
+  border-color: #e59498;
+  color: #fff5f5;
+}

@@ -1,0 +1,197 @@
+.rsvp-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+  text-align: left;
+}
+
+.rsvp-form label {
+  margin-top: 8px;
+  color: #eee1ef;
+  font-size: 18px;
+}
+
+.optional {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.rsvp-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  font: inherit;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color-scheme: dark;
+  background: #100e0e;
+  border-color: #786560;
+}
+
+.rsvp-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  font: inherit;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color-scheme: dark;
+  background: #100e0e;
+  border-color: #786560;
+}
+
+.rsvp-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  font: inherit;
+  resize: vertical;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color-scheme: dark;
+  background: #100e0e;
+  border-color: #786560;
+}
+
+.rsvp-form input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.rsvp-form select:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.rsvp-form textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.rsvp-submit:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.rsvp-submit {
+  margin-top: 14px;
+  font: inherit;
+  cursor: pointer;
+  padding: 13px 26px;
+  border: 1px solid #b29462;
+  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: #8b202b;
+  border-color: #bc7377;
+  color: #fff5f5;
+  box-shadow: none;
+}
+
+.rsvp-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.detail-dialog .rsvp-status {
+  margin: 18px 0 0;
+  font-size: 15px;
+}
+
+.rsvp-status:empty {
+  display: none;
+}
+
+.wishlist-items {
+  display: grid;
+  gap: 14px;
+  margin: 26px 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.wishlist-item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--gold);
+  background: #211819;
+  border-color: #786560;
+}
+
+.wishlist-symbol {
+  font-size: 27px;
+  line-height: 1;
+  color: #edb0c3;
+}
+
+.wishlist-item h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: normal;
+  color: #edb0c3;
+}
+
+.detail-dialog .wishlist-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.wishlist-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 0;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--rose);
+}
+
+.wishlist-link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.detail-dialog .wishlist-note {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.rsvp-form input::placeholder {
+  color: #ac9cb0;
+}
+
+.rsvp-form textarea::placeholder {
+  color: #ac9cb0;
+}
+
+.rsvp-status[data-state="success"] {
+  color: #a6d4b1;
+}
+
+.rsvp-status[data-state="error"] {
+  color: #ffadc2;
+}
+
+.wishlist-link:hover {
+  color: #ffcfdf;
+}
+
+.rsvp-submit:hover {
+  background: #a42935;
+  box-shadow: 0 0 22px rgb(164 41 53 / 20%);
+}
