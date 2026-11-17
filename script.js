@@ -318,3 +318,24 @@ surpriseButton.addEventListener("click", () => {
     const randomIndex = Math.floor(Math.random() * choices.length);
     changeOutfit(choices[randomIndex]);
 });
+
+const attendanceSelect = document.querySelector("#guest-attendance");
+const declineDetails = document.querySelector("#decline-details");
+const declineFields = declineDetails.querySelectorAll("textarea, select");
+
+function updateDeclineFields() {
+    const isDeclining = attendanceSelect.value === "No";
+
+    declineDetails.hidden = !isDeclining;
+
+    declineFields.forEach((field) => {
+        field.disabled = !isDeclining;
+
+        if (!isDeclining) {
+            field.value = "";
+        }
+    });
+}
+
+attendanceSelect.addEventListener("change", updateDeclineFields);
+updateDeclineFields();

@@ -269,7 +269,12 @@
           value="Nabiha's 20th Birthday RSVP"
         />
 
-        <label for="guest-name">Your name</label>
+        <p>
+          We'll most likely start at 3 or 4 pm. You can leave whenever you need
+          to!
+        </p>
+
+        <label for="guest-name">Name</label>
         <input
           id="guest-name"
           name="name"
@@ -279,23 +284,41 @@
           required
         />
 
-        <label for="guest-attendance">Will you be coming?</label>
+        <label for="guest-attendance">Coming?</label>
         <select id="guest-attendance" name="attendance" required>
           <option value="" disabled selected>Choose your answer</option>
-          <option value="Yes">Yes, save me a seat!</option>
-          <option value="No">Sadly, I can't make it</option>
+          <option value="Yes">Yes!</option>
+          <option value="No">Can't make it</option>
         </select>
 
-        <label for="guest-dietary">
-          Dietary requirements <span class="optional">(optional)</span>
-        </label>
-        <textarea
-          id="guest-dietary"
-          name="dietary_requirements"
-          rows="3"
-          maxlength="1000"
-          placeholder="Anything you'd like me to know?"
-        ></textarea>
+        <div id="decline-details" class="decline-details" hidden>
+          <label for="decline-reason">
+            Why can't you make it? (optional)
+          </label>
+          <textarea
+            id="decline-reason"
+            name="decline_reason"
+            rows="3"
+            maxlength="1000"
+            disabled
+          ></textarea>
+
+          <label for="different-time">
+            Would you be able to come if I changed the time?
+          </label>
+          <select
+            id="different-time"
+            name="could_attend_at_another_time"
+            disabled
+          >
+            <option value="">Choose your answer</option>
+            <option value="Yes">Yes</option>
+            <option value="Maybe">Maybe</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <p>Don't forget to check the dress code before choosing your outfit!</p>
 
         <button id="rsvp-submit" class="rsvp-submit" type="submit">
           Send my RSVP ♥

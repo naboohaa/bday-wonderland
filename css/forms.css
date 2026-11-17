@@ -112,6 +112,11 @@
   display: none;
 }
 
+.decline-details {
+    display: grid;
+    gap: 10px;
+}
+
 .wishlist-items {
   display: grid;
   gap: 14px;
