@@ -1,0 +1,281 @@
+:root {
+    --cream: #f2ecdf;
+    --ink: #292725;
+    --rose: #922f34;
+    --gold: #9c825b;
+    --background: #f2ecdf;
+    --muted: #70665d;
+    --forest: #343b32;
+    --forest-dark: #191d18;
+}
+
+body,
+.entrance,
+.birthday-details {
+    background: radial-gradient(
+        ellipse at center,
+        #501c29,
+        #260b15 80%
+    );
+    color: #f2ecdf;
+}
+
+.footer-note {
+    color: #ddc5c4;
+}
+
+.entrance::before,
+.entrance::after {
+    display: none;
+}
+
+.invitation,
+.birthday-paper {
+    border: 20px solid transparent;
+    border-radius: 3px;
+
+    outline: 1px solid #9c825b;
+    outline-offset: -28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f3e8,
+            #eee5d5
+        ) padding-box,
+        url("../images/card-pattern.jpg")
+        center / 220px 330px repeat border-box;
+
+    color: #292725;
+
+    box-shadow:
+        0 2px 5px rgb(60 39 26 / 8%),
+        0 18px 50px rgb(60 39 26 / 14%);
+}
+
+.invitation::after,
+.birthday-paper::after {
+    display: none;
+}
+
+h1,
+.birthday-date {
+    color: #292725;
+}
+
+.title-wonderland,
+.birthday-name,
+.ornament,
+.button-symbol,
+.detail-dialog h2,
+.look-heading h3 {
+    color: #922f34;
+}
+
+.title-small,
+.eyebrow,
+.save-the-date {
+    color: #756044;
+}
+
+.introduction,
+.birthday-description,
+.birthday-quote {
+    color: #3c3630;
+}
+
+.footer-note,
+.party-details,
+.optional,
+.birthday-quote cite,
+.detail-dialog .wishlist-note {
+    color: #70665d;
+}
+
+#enter-button,
+.rsvp-submit,
+.detail-button:first-child {
+    background: #922f34;
+    border-color: #78242a;
+    color: #fff7e9;
+    box-shadow: none;
+}
+
+#enter-button:hover,
+.rsvp-submit:hover,
+.detail-button:first-child:hover {
+    background: #742128;
+    box-shadow: 0 5px 18px rgb(146 47 52 / 16%);
+}
+
+.detail-button {
+    background: #f5eee1;
+    border-color: #aa9679;
+    color: #292725;
+}
+
+.detail-button:hover {
+    background: #e8ddca;
+}
+
+.detail-button:first-child .button-symbol {
+    color: #fff7e9;
+}
+
+.back-button,
+.surprise-look,
+.wishlist-link,
+.dialog-close {
+    color: #922f34;
+}
+
+.wishlist-link:hover {
+    color: #631b24;
+}
+
+.detail-dialog {
+    background:
+        radial-gradient(
+            ellipse at top,
+            #fbf6eb,
+            #eee5d5
+        );
+
+    color: #292725;
+    border-color: #9c825b;
+    box-shadow: 0 25px 80px rgb(0 0 0 / 30%);
+}
+
+.detail-dialog::backdrop {
+    background: rgb(25 23 21 / 75%);
+}
+
+.theme-rules,
+.wishlist-item,
+.detail-dialog .coming-soon {
+    background: #e9dfce;
+    border-color: #aa9679;
+    color: #3c3630;
+}
+
+.theme-rules strong,
+.detail-dialog .theme-rules .theme-warning,
+.wishlist-item h3,
+.wishlist-symbol {
+    color: #922f34;
+}
+
+.detail-dialog .theme-rules .theme-warning {
+    border-color: #aa9679;
+}
+
+.rsvp-form label {
+    color: #292725;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+    background: #fcf8ef;
+    border-color: #aa9679;
+    color: #292725;
+    color-scheme: light;
+}
+
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder {
+    color: #82766b;
+}
+
+.rsvp-status[data-state="success"] {
+    color: #345c3d;
+}
+
+.rsvp-status[data-state="error"] {
+    color: #922f34;
+}
+
+.character-picker button {
+    background: #f5eee1;
+    border-color: #aa9679;
+    color: #292725;
+}
+
+.character-picker button:hover {
+    background: #e8ddca;
+}
+
+.character-picker button[aria-pressed="true"] {
+    background: #922f34;
+    border-color: #78242a;
+    color: #fff7e9;
+    box-shadow: none;
+}
+
+.look-heading {
+    border-color: #aa9679;
+}
+
+.wardrobe-stage {
+    background: radial-gradient(
+        ellipse at 50% 35%,
+        #fcf8ef,
+        color-mix(
+            in srgb,
+            var(--stage-accent) 18%,
+            #eee5d5
+        )
+    );
+
+    border-color: #9c825b;
+}
+
+.wardrobe-stage::before {
+    border-color: #bba786;
+}
+
+.wardrobe-stage::after {
+    background:
+        url("../images/card-pattern.jpg")
+        center / 100px 150px repeat;
+    opacity: 0.3;
+}
+
+.wardrobe-sparkle {
+    color: #922f34;
+}
+
+.stage-caption,
+.detail-dialog .wardrobe-status {
+    color: #70665d;
+}
+
+.playing-card,
+.mini-card,
+.watch-face,
+.hat-ticket,
+.bottle-label {
+    background: #f2ecdf;
+    color: #292725;
+}
+
+.card-left,
+.red-card {
+    color: #922f34;
+}
+
+.watch-hand {
+    background: #292725;
+}
+
+.watch-pin {
+    background: #922f34;
+}
+
+@media (max-width: 600px) {
+    .invitation,
+    .birthday-paper {
+        border-width: 14px;
+        outline-offset: -21px;
+    }
+}

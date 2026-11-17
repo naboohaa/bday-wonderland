@@ -228,3 +228,11 @@
     height: 340px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .rabbit-hole,
+    .rabbit-hole::before,
+    body.is-falling .entrance {
+        animation: none;
+    }
+}

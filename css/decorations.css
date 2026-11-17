@@ -49,7 +49,7 @@
 
 .hanging-item {
   position: absolute;
-  top: 24px;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +65,7 @@
   width: 1px;
   height: var(--thread-length, 100px);
   background: var(--gold);
-  opacity: 0.65;
+  opacity: 0.9;
 }
 
 .hanging-heart {
@@ -84,14 +84,14 @@
 
 .hanging-bottle {
   left: 5%;
-  --thread-length: 430px;
+  --thread-length: 400px;
   --duration: 8s;
   --delay: -5s;
 }
 
 .hanging-key {
   left: 17%;
-  --thread-length: 540px;
+  --thread-length: 490px;
   --duration: 6.5s;
   --delay: -1s;
 }
@@ -112,7 +112,7 @@
 
 .hanging-diamond {
   right: 5%;
-  --thread-length: 520px;
+  --thread-length: 470px;
   --duration: 7.5s;
   --delay: -3.5s;
 }

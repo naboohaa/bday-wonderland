@@ -2,11 +2,40 @@
   position: fixed;
   inset: 0;
   z-index: 20;
+
   display: grid;
   place-items: center;
+
   overflow: hidden;
-  color: var(--cream);
-  background: radial-gradient(ellipse at center, #020403, #101711 60%, #291322);
+  isolation: isolate;
+
+  background: radial-gradient(
+    ellipse at center,
+    #020202 8%,
+    #100d0b 40%,
+    #33251f 100%
+  );
+
+  color: #f2ecdf;
+  animation: hole-appears 650ms ease-in both;
+}
+
+.rabbit-hole::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  z-index: -1;
+
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 17deg,
+    rgb(205 181 142 / 10%) 18deg 19deg,
+    transparent 20deg 36deg
+  );
+
+  mask-image: radial-gradient(ellipse at center, transparent 10%, #000 45%);
+
+  animation: tunnel-turn 12s linear infinite;
 }
 
 body.is-falling {
@@ -29,19 +58,35 @@ body.is-falling {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 45vmin;
-  height: 65vmin;
-  border: 2px solid rgb(181 151 88 / 40%);
-  border-radius: 48% 52% 55% 45%;
-  animation: tunnel-zoom 3s linear infinite;
-  border-color: rgb(176 116 150 / 35%);
+
+  width: 65vmin;
+  height: 85vmin;
+
+  border: 3px solid rgb(190 161 120 / 35%);
+  border-radius: 46% 54% 49% 51%;
+
+  box-shadow: 0 0 28px rgb(126 80 51 / 12%), inset 0 0 28px rgb(126 80 51 / 12%);
+
+  animation: tunnel-zoom 2.4s linear infinite;
 }
 
 .tunnel-rings span:nth-child(2) {
-  animation-delay: -1s;
+  animation-delay: -0.4s;
 }
 
 .tunnel-rings span:nth-child(3) {
+  animation-delay: -0.8s;
+}
+
+.tunnel-rings span:nth-child(4) {
+  animation-delay: -1.2s;
+}
+
+.tunnel-rings span:nth-child(5) {
+  animation-delay: -1.6s;
+}
+
+.tunnel-rings span:nth-child(6) {
   animation-delay: -2s;
 }
 
@@ -79,17 +124,28 @@ body.is-falling {
 .falling-text {
   position: relative;
   z-index: 1;
-  padding: 16px 24px;
-  font-size: clamp(25px, 5vw, 40px);
+
+  padding: 12px 22px;
+  background: transparent;
+
+  color: #f2ecdf;
+  font-family: var(--font-story);
+  font-size: clamp(22px, 5vw, 34px);
   font-style: italic;
   text-align: center;
-  background: rgb(8 5 11 / 70%);
-  color: #f1dbea;
-  font-family: var(--font-story);
+  text-transform: lowercase;
+
+  text-shadow: 0 2px 15px #000;
+}
+
+body.is-falling .entrance {
+  transform-origin: center;
+  animation: fall-through 700ms ease-in forwards;
 }
 
 @keyframes gentle-swing {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(-5deg);
   }
 
@@ -98,10 +154,32 @@ body.is-falling {
   }
 }
 
+@keyframes hole-appears {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fall-through {
+  from {
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  to {
+    transform: scale(3.5) rotate(-7deg);
+    filter: blur(7px);
+  }
+}
+
 @keyframes tunnel-zoom {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
+    transform: translate(-50%, -50%) scale(0.06) rotate(-15deg);
   }
 
   20% {
@@ -110,8 +188,18 @@ body.is-falling {
 
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(6) rotate(75deg);
+    transform: translate(-50%, -50%) scale(7) rotate(35deg);
   }
+}
+
+@keyframes tunnel-turn {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rush-past {
@@ -120,7 +208,8 @@ body.is-falling {
     transform: translateY(110svh) rotate(-30deg) scale(0.5);
   }
 
-  15%, 80% {
+  15%,
+  80% {
     opacity: 1;
   }
 
