@@ -68,16 +68,10 @@
   opacity: 0.9;
 }
 
-.hanging-heart {
-  left: 5%;
-  --thread-length: 70px;
-  --duration: 6s;
-  --delay: -2s;
-}
-
 .hanging-hat {
-  left: 14%;
-  --thread-length: 230px;
+  left: 6%;
+  right: auto;
+  --thread-length: 150px;
   --duration: 7.5s;
   --delay: -3s;
 }
