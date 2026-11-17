@@ -29,7 +29,11 @@
   padding: 20px 14px 38px;
   border: 1px solid var(--gold);
   border-radius: 160px 160px 12px 12px;
-  background: radial-gradient( ellipse at 50% 35%, color-mix(in srgb, var(--stage-accent) 28%, #211625), #0d0b11 85% );
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    color-mix(in srgb, var(--stage-accent) 28%, #211625),
+    #0d0b11 85%
+  );
   border-color: #9f8467;
 }
 
@@ -52,7 +56,8 @@
   right: 0;
   height: 65px;
   z-index: -1;
-  background: conic-gradient( #c9b9ca 25%, #100d14 0 50%, #c9b9ca 0 75%, #100d14 0 );
+  background: url("../images/card-pattern.png") center / cover no-repeat;
+  opacity: 0.3;
   background-size: 28px 28px;
   opacity: 0.15;
 }
@@ -131,7 +136,8 @@
   border: 1px solid var(--gold);
   font: inherit;
   cursor: pointer;
-  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: background-color 180ms ease, color 180ms ease,
+    transform 180ms ease;
   line-height: 1.6;
   font-family: var(--font-heading);
   font-size: 15px;
