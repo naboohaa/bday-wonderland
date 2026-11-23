@@ -38,70 +38,15 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/harlequin.css" />
+    <link rel="stylesheet" href="style.css?v=mobile-fix-2" />
+    <link rel="stylesheet" href="css/harlequin.css?v=mobile-fix-2" />
     <script src="script.js" defer></script>
   </head>
 
   <body>
     <main>
       <section class="entrance" aria-labelledby="invitation-title">
-        <div class="hanging-decorations" aria-hidden="true">
-          <div class="hanging-item hanging-watch">
-            <div class="pocket-watch">
-              <div class="watch-face">
-                <span class="watch-twelve">XII</span>
-                <span class="watch-three">III</span>
-                <span class="watch-six">VI</span>
-                <span class="watch-nine">IX</span>
-
-                <span class="watch-hand hour-hand"></span>
-                <span class="watch-hand minute-hand"></span>
-                <span class="watch-pin"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hanging-item hanging-hat">
-            <div class="hatter-hat">
-              <div class="hat-crown">
-                <span class="hat-ticket">10/6</span>
-              </div>
-              <div class="hat-brim"></div>
-            </div>
-          </div>
-
-          <div class="hanging-item hanging-diamond">
-            <div class="mini-card red-card">
-              <span>Q</span>
-              <span class="mini-suit">♦</span>
-            </div>
-          </div>
-
-          <div class="hanging-item hanging-teacup">
-            <div class="teacup-decoration">
-              <div class="teacup">
-                <span class="teacup-flower">✿</span>
-              </div>
-              <div class="teacup-saucer"></div>
-            </div>
-          </div>
-
-          <div class="hanging-item hanging-bottle">
-            <div class="potion-bottle">
-              <span class="bottle-label">DRINK<br />ME</span>
-            </div>
-          </div>
-
-          <div class="hanging-item hanging-key">
-            <div class="gold-key">
-              <span class="key-ring"></span>
-              <span class="key-shaft"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="invitation">
+        <div class="invitation-scene">
           <div class="playing-card card-left" aria-hidden="true">
             <span class="card-corner">A<br />♥</span>
             <span class="card-suit">♥</span>
@@ -112,28 +57,30 @@
             <span class="card-suit">♠</span>
           </div>
 
-          <p class="eyebrow">Time for a curious new chapter</p>
+          <div class="invitation">
+            <p class="eyebrow">Time for a curious new chapter</p>
 
-          <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
+            <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
 
-          <h1 id="invitation-title">
-            Nabiha
-            <span class="title-small">in</span>
-            <span class="title-wonderland">Wonderland</span>
-          </h1>
+            <h1 id="invitation-title">
+              Nabiha
+              <span class="title-small">in</span>
+              <span class="title-wonderland">Wonderland</span>
+            </h1>
 
-          <p class="introduction">
-            When the clock strikes twenty,
-            <br />
-            meet me down the rabbit hole.
-          </p>
+            <p class="introduction">
+              When the clock strikes twenty,
+              <br />
+              meet me down the rabbit hole.
+            </p>
 
-          <button id="enter-button" type="button">
-            Follow me
-            <span aria-hidden="true">↓</span>
-          </button>
+            <button id="enter-button" type="button">
+              Follow me
+              <span aria-hidden="true">↓</span>
+            </button>
 
-          <p id="entrance-message" class="entrance-message" role="status"></p>
+            <p id="entrance-message" class="entrance-message" role="status"></p>
+          </div>
         </div>
 
         <p class="footer-note">For the curious at heart</p>
@@ -194,6 +141,61 @@
         tabindex="-1"
         hidden
       >
+        <div class="hanging-decorations" aria-hidden="true">
+          <div class="hanging-item hanging-watch">
+            <div class="pocket-watch">
+              <div class="watch-face">
+                <span class="watch-twelve">XII</span>
+                <span class="watch-three">III</span>
+                <span class="watch-six">VI</span>
+                <span class="watch-nine">IX</span>
+
+                <span class="watch-hand hour-hand"></span>
+                <span class="watch-hand minute-hand"></span>
+                <span class="watch-pin"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-hat">
+            <div class="hatter-hat">
+              <div class="hat-crown">
+                <span class="hat-ticket">10/6</span>
+              </div>
+              <div class="hat-brim"></div>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-diamond">
+            <div class="mini-card red-card">
+              <span>Q</span>
+              <span class="mini-suit">♦</span>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-teacup">
+            <div class="teacup-decoration">
+              <div class="teacup">
+                <span class="teacup-flower">✿</span>
+              </div>
+              <div class="teacup-saucer"></div>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-bottle">
+            <div class="potion-bottle">
+              <span class="bottle-label">DRINK<br />ME</span>
+            </div>
+          </div>
+
+          <div class="hanging-item hanging-key">
+            <div class="gold-key">
+              <span class="key-ring"></span>
+              <span class="key-shaft"></span>
+            </div>
+          </div>
+        </div>
+        
         <div class="birthday-paper">
           <p class="eyebrow">The clock has struck twenty</p>
 
