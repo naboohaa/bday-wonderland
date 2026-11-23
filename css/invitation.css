@@ -29,7 +29,7 @@
   text-align: center;
   position: relative;
   isolation: isolate;
-  padding: 90px 42px 100px;
+  padding: 60px 42px;
   border: 14px solid transparent;
   border-radius: 3px;
   outline: 1px solid #a58a63;
@@ -139,7 +139,7 @@
   text-align: center;
   position: relative;
   isolation: isolate;
-  padding: 90px 42px 100px;
+  padding: 60px 42px;
   border: 14px solid transparent;
   border-radius: 3px;
   outline: 1px solid #a58a63;
