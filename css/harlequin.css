@@ -255,3 +255,55 @@ h1,
 .watch-pin {
   background: #922f34;
 }
+
+@media (max-width: 600px) {
+    .entrance .hanging-decorations {
+        display: none;
+    }
+
+    .entrance {
+        padding: 55px 24px 65px;
+    }
+
+    .entrance > .playing-card {
+        display: none;
+    }
+
+    .invitation {
+        position: relative;
+        overflow: visible;
+    }
+
+    .invitation .playing-card {
+        width: 48px;
+        height: 70px;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .invitation .card-left {
+        top: -24px;
+        left: -12px;
+        right: auto;
+        bottom: auto;
+        transform: rotate(-16deg);
+    }
+
+    .invitation .card-right {
+        right: -12px;
+        bottom: -24px;
+        top: auto;
+        left: auto;
+        transform: rotate(16deg);
+    }
+
+    .invitation .card-corner {
+        top: 5px;
+        left: 5px;
+        font-size: 10px;
+    }
+
+    .invitation .card-suit {
+        font-size: 25px;
+    }
+}
