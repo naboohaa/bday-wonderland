@@ -14,17 +14,16 @@
 }
 
 .card-left {
-  top: 16%;
-  left: max(20px, calc(50% - 400px));
-  transform: rotate(-19deg);
-  color: #a42935;
+    top: -25px;
+    left: -45px;
+    transform: rotate(-19deg);
+    color: #922f34;
 }
 
 .card-right {
-  right: max(20px, calc(50% - 400px));
-  bottom: 17%;
-  color: var(--ink);
-  transform: rotate(17deg);
+    right: -45px;
+    bottom: -25px;
+    transform: rotate(17deg);
 }
 
 .card-corner {
