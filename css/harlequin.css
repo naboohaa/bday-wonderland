@@ -31,8 +31,7 @@ body {
   display: none;
 }
 
-.invitation,
-.birthday-paper {
+.invitation {
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -221,7 +220,7 @@ h1,
 }
 
 .wardrobe-stage::after {
-  background: url("../images/card-pattern.png") center / 80% ;
+  background: url("../images/card-pattern.png") center / 80%;
   opacity: 0.3;
 }
 

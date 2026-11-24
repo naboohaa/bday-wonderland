@@ -38,50 +38,59 @@
       rel="stylesheet"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css?v=mobile-fix-2" />
     <link rel="stylesheet" href="css/harlequin.css?v=mobile-fix-2" />
+    <link rel="stylesheet" href="css/storybook.css?v=ink-wash-3" />
     <script src="script.js" defer></script>
+    <script src="storybook.js?v=ink-wash-3" defer></script>
   </head>
 
   <body>
     <main>
-      <section class="entrance" aria-labelledby="invitation-title">
-        <div class="invitation-scene">
-          <div class="playing-card card-left" aria-hidden="true">
-            <span class="card-corner">A<br />♥</span>
-            <span class="card-suit">♥</span>
-          </div>
+      <section
+        class="entrance book-entrance"
+        aria-label="A most curious adventure"
+      >
+        <div class="storybook">
+          <div class="book-spread">
+            <div class="book-page story-page">
+              <h1 class="story-title">
+                <span class="fairytale-line">
+                  <span class="ornate-cap">O</span>nce
+                </span>
 
-          <div class="playing-card card-right" aria-hidden="true">
-            <span class="card-corner">A<br />♠</span>
-            <span class="card-suit">♠</span>
-          </div>
+                <span class="fairytale-middle">upon</span>
 
-          <div class="invitation">
-            <p class="eyebrow">Time for a curious new chapter</p>
+                <span class="fairytale-line">
+                  <span class="ornate-cap">A</span> time…
+                </span>
+              </h1>
 
-            <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
+              <p class="story-subtitle">a most curious adventure</p>
+            </div>
 
-            <h1 id="invitation-title">
-              Nabiha
-              <span class="title-small">in</span>
-              <span class="title-wonderland">Wonderland</span>
-            </h1>
+            <div class="book-page doorway-page">
+              <div class="rabbit-portal">
+                <img
+                  class="rabbit-door"
+                  src="images/rabbit-hole.png"
+                  alt="A mossy rabbit hole surrounded by mushrooms and butterflies"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
 
-            <p class="introduction">
-              When the clock strikes twenty,
-              <br />
-              meet me down the rabbit hole.
-            </p>
-
-            <button id="enter-button" type="button">
-              Follow me
-              <span aria-hidden="true">↓</span>
-            </button>
+              <button id="enter-button" type="button">
+                Follow me <span aria-hidden="true">↓</span>
+              </button>
+            </div>
           </div>
         </div>
-
-        <p class="footer-note">For the curious at heart</p>
       </section>
 
       <div id="rabbit-hole" class="rabbit-hole" hidden>
@@ -193,27 +202,22 @@
             </div>
           </div>
         </div>
-        
+
         <div class="birthday-paper">
-          <p class="eyebrow">The clock has struck twenty</p>
+          <div class="inner-book-copy">
+            <p class="chapter-heading">THE CLOCK HAS STRUCK TWENTY IN</p>
 
-          <div class="ornament" aria-hidden="true">♠ ♦ ♣ ♥</div>
+            <h2 id="birthday-title" class="wonderland-heading">
+              <span class="wonderland-name">Nabiha’s</span>
+              <span class="wonderland-word">Wonderland</span>
+            </h2>
 
-          <p class="save-the-date">Save the date.</p>
+            <p class="birthday-invitation">
+              join me for some birthday madness at my home
+            </p>
 
-          <h2 id="birthday-title" class="birthday-date">
-            <span class="date-day">9<span class="date-suffix">th</span></span>
-            <span class="date-month">January</span>
-            <span class="date-year">2027</span>
-          </h2>
-
-          <p class="birthday-name">Nabiha's 20th birthday</p>
-
-          <p class="birthday-description">
-            See you in Wonderland for some birthday madness.
-          </p>
-
-          <p class="party-details">Time and location coming soon.</p>
+            <p class="birthday-written-date">on january 9th 2027</p>
+          </div>
 
           <div class="invitation-actions">
             <button

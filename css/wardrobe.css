@@ -1,4 +1,4 @@
-.wardrobe-dialog {
+.detail-dialog:where(.wardrobe-dialog) {
   width: min(960px, calc(100% - 24px));
   padding: 42px 28px 24px;
 }

@@ -14,7 +14,12 @@
   text-align: center;
   color: var(--cream);
   box-shadow: 0 30px 100px rgb(0 0 0 / 70%), 0 0 45px rgb(112 35 62 / 15%);
-  background: radial-gradient( ellipse at top, rgb(139 32 43 / 16%), transparent 60% ), #151313;
+  background: radial-gradient(
+      ellipse at top,
+      rgb(139 32 43 / 16%),
+      transparent 60%
+    ),
+    #151313;
   border-color: #a58a63;
 }
 
@@ -65,4 +70,24 @@ body.dialog-open {
 .detail-dialog::backdrop {
   background: rgb(3 5 4 / 88%);
   backdrop-filter: blur(8px);
+}
+
+@media (min-width: 701px) {
+  .detail-dialog {
+    box-sizing: border-box;
+    width: min(960px, calc(100vw - 64px));
+    height: min(720px, calc(100dvh - 64px));
+    max-width: none;
+    max-height: calc(100dvh - 64px);
+    padding: 42px 36px 28px;
+    overflow-y: auto;
+  }
+
+  #rsvp-dialog > p,
+  #wishlist-dialog > p,
+  #rsvp-dialog .rsvp-form {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
