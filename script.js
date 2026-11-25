@@ -138,12 +138,11 @@ rsvpForm.addEventListener("submit", async (event) => {
 });
 
 const wardrobeLooks = {
-  nabiha: {
-    name: "Just me",
-    description: "My everyday look, before a little Wonderland magic.",
-    alt: "Nabiha wearing an olive hijab and floral maxi dress",
-    background: "#dce0cd",
-    accent: "#637251",
+  "talking-flowers": {
+    name: "Talking Flowers",
+    alt: "Nabiha wearing a dusty-pink hijab, ivory lace blouse, sage waistcoat and layered floral maxi skirt",
+    background: "#eadbd8",
+    accent: "#8a9875",
   },
 
   "mad-hatter": {
@@ -233,7 +232,6 @@ const wardrobeLooks = {
 
 const wardrobeAvatar = document.querySelector("#wardrobe-avatar");
 const wardrobeStage = document.querySelector("#wardrobe-stage");
-const lookName = document.querySelector("#look-name");
 const wardrobeStatus = document.querySelector("#wardrobe-status");
 const characterButtons = document.querySelectorAll("[data-look]");
 const surpriseButton = document.querySelector("#surprise-look");
@@ -269,8 +267,6 @@ async function changeOutfit(key) {
 
     wardrobeAvatar.src = imagePath;
     wardrobeAvatar.alt = look.alt;
-
-    lookName.textContent = look.name;
 
     wardrobeStage.style.setProperty("--stage-colour", look.background);
 
@@ -341,10 +337,7 @@ const spiralLines = document.querySelector("#spiral-lines");
 spiralLines.replaceChildren();
 
 for (let arm = 0; arm < 3; arm++) {
-  const path = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "path"
-  );
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
   const points = [];
   const offset = arm * ((Math.PI * 2) / 3);
@@ -353,18 +346,14 @@ for (let arm = 0; arm < 3; arm++) {
     const angle = step * 0.024;
     const radius = 12 * Math.exp(0.25 * angle);
     const wobble =
-      Math.sin(angle * 4 + arm * 2) * 0.07 +
-      Math.sin(angle * 9 - arm) * 0.025;
+      Math.sin(angle * 4 + arm * 2) * 0.07 + Math.sin(angle * 9 - arm) * 0.025;
 
-    const unevenRadius =
-      radius * (1 + Math.sin(angle * 5 + arm) * 0.08);
+    const unevenRadius = radius * (1 + Math.sin(angle * 5 + arm) * 0.08);
 
     const x = unevenRadius * Math.cos(angle + offset + wobble);
     const y = unevenRadius * Math.sin(angle + offset + wobble);
 
-    points.push(
-      `${step === 0 ? "M" : "L"} ${x.toFixed(2)} ${y.toFixed(2)}`
-    );
+    points.push(`${step === 0 ? "M" : "L"} ${x.toFixed(2)} ${y.toFixed(2)}`);
   }
 
   path.setAttribute("d", points.join(" "));

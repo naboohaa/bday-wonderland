@@ -113,6 +113,10 @@
 
 .wardrobe-controls {
   min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: left;
 }
 
@@ -127,24 +131,22 @@
 .character-picker {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 9px;
+  grid-auto-rows: minmax(68px, 1fr);
+  gap: 12px;
+  flex: 1;
 }
 
 .character-picker button {
-  min-height: 44px;
-  padding: 10px 8px;
+  min-height: 68px;
+  padding: 16px 12px;
   border: 1px solid var(--gold);
-  font: inherit;
+  border-radius: 3px;
+  font-family: var(--font-heading);
+  font-size: 19px;
+  line-height: 1.3;
   cursor: pointer;
   transition: background-color 180ms ease, color 180ms ease,
     transform 180ms ease;
-  line-height: 1.6;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  letter-spacing: 0;
-  background: #1c1818;
-  border-color: #786560;
-  color: #f0e7e7;
 }
 
 .character-picker button:hover {
@@ -155,6 +157,25 @@
 .character-picker button:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
+}
+
+.character-picker button:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.look-heading:has(#look-name:empty) {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .character-picker {
+    flex: none;
+  }
+
+  .character-picker button {
+    min-height: 60px;
+    font-size: 17px;
+  }
 }
 
 .surprise-look:focus-visible {
@@ -241,4 +262,69 @@
   background: #8b202b;
   border-color: #e59498;
   color: #fff5f5;
+}
+
+@media (min-width: 651px) {
+  .wardrobe-layout {
+    align-items: stretch;
+  }
+
+  .wardrobe-stage {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 12px;
+  }
+
+  .wardrobe-controls {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 0;
+  }
+
+  .detail-dialog .wardrobe-label {
+    margin: 0 0 18px;
+    line-height: 1.2;
+  }
+
+  .character-picker {
+    flex: 1;
+    grid-auto-rows: minmax(60px, 1fr);
+  }
+
+  .look-heading {
+    flex-shrink: 0;
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .surprise-look {
+    flex-shrink: 0;
+    align-self: stretch;
+    margin: 18px 0 0;
+    padding: 12px 0 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--rose);
+  }
+
+  .wardrobe-stage .avatar-frame {
+    position: relative;
+    flex: 1;
+    height: auto;
+    min-height: 340px;
+  }
+
+  .wardrobe-stage #wardrobe-avatar {
+    position: absolute;
+    inset: auto 0 0;
+    width: 100%;
+    height: clamp(340px, 48svh, 480px);
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
 }
