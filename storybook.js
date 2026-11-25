@@ -93,7 +93,7 @@
           return;
         }
         start ??= now;
-        const progress = Math.min((now - start) / 3800, 1);
+        const progress = Math.min((now - start) / 1800, 1);
         const spread = 190 * (1 - Math.pow(1 - progress, 1.7));
         const bloom = (x, y, size) =>
           `radial-gradient(ellipse farthest-corner at ${x}% ${y}%, #000 0%, #000 ${
@@ -135,7 +135,7 @@
       if (skip) return;
       await watercolorReveal();
       button.disabled = false;
-      await fade(button, 1400, 300);
+      await fade(button, 600);
     } catch (error) {
       if (!skip) console.warn("Story introduction could not finish:", error);
     } finally {

@@ -22,6 +22,15 @@
   display: none;
 }
 
+.book-page,
+.birthday-paper {
+  background-color: #f2ecdf;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Cfilter id='grain' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.06' filter='url(%23grain)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at center, #f8f3e8, #f2ecdf 65%, #e9dfcc);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 .book-page {
   position: relative;
   display: flex;
@@ -32,16 +41,6 @@
   padding: 44px 34px;
   color: #292725;
   text-align: center;
-  background-color: #f2ecdf;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.17' filter='url(%23paper)'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 12% 8%, rgb(156 130 91 / 8%), transparent 45%),
-    radial-gradient(ellipse at 90% 95%, rgb(156 130 91 / 10%), transparent 50%),
-    repeating-linear-gradient(
-      96deg,
-      transparent 0 13px,
-      rgb(94 66 34 / 3%) 14px,
-      transparent 15px 29px
-    );
 }
 
 .book-page:first-child {
@@ -56,16 +55,21 @@
     inset 0 0 42px rgb(91 54 22 / 12%);
 }
 
+.book-entrance .story-title,
+.birthday-paper .wonderland-heading {
+  font-family: "UnifrakturMaguntia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+
 .book-entrance .story-title {
   width: 100%;
   margin: 0;
   color: #292725;
-  font-family: "UnifrakturMaguntia", serif;
-  font-size: clamp(48px, 5.5vw, 76px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -1px;
+  font-size: clamp(42px, 5.5vw, 70px);
+  line-height: 1.15;
   text-align: center;
   opacity: 0;
 }
@@ -77,16 +81,20 @@
 
 .fairytale-middle {
   display: block;
-  margin: 8px 0;
+  margin: 10px 0;
   font-size: 0.85em;
 }
 
 .ornate-cap {
   position: relative;
   display: inline-block;
-  font-size: 1.85em;
-  line-height: 0.8;
-  vertical-align: -0.12em;
+  margin-right: 0.03em;
+  font-family: inherit;
+  font-size: 1.65em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9;
+  vertical-align: -0.08em;
 }
 
 .ornate-cap::after {
@@ -100,6 +108,19 @@
   font-weight: normal;
 }
 
+.book-entrance .ornate-cap::after {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.book-entrance.story-written .ornate-cap::after {
+  opacity: 1;
+}
+
+.wonderland-heading .ornate-cap {
+  font-size: 1.35em;
+}
+
 .book-entrance .story-subtitle {
   margin: 28px 0 0;
   color: #70665d;
@@ -108,6 +129,10 @@
   font-style: italic;
   line-height: 1.5;
   letter-spacing: 1px;
+  opacity: 0;
+}
+
+.story-letter {
   opacity: 0;
 }
 
@@ -168,19 +193,6 @@
   opacity: 0;
 }
 
-.story-letter {
-  opacity: 0;
-}
-
-.book-entrance .ornate-cap::after {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.book-entrance.story-written .ornate-cap::after {
-  opacity: 1;
-}
-
 @keyframes firefly-drift {
   0%,
   100% {
@@ -196,6 +208,80 @@
     opacity: 0.3;
     transform: translate(8px, -14px);
   }
+}
+
+.birthday-paper {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 580px;
+  padding: 72px 34px 60px;
+  overflow: visible;
+  border: 7px solid #3c1319;
+  border-radius: 3px;
+  outline: none;
+  color: #292725;
+  box-shadow: inset 0 0 35px rgb(91 54 22 / 12%), 0 20px 60px rgb(0 0 0 / 40%);
+}
+
+.inner-book-copy {
+  width: 100%;
+  text-align: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.chapter-heading {
+  margin: 0 0 34px;
+  color: #756044;
+  font-size: clamp(10px, 2vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.birthday-paper .wonderland-heading {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 30px;
+  color: #292725;
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 1.25;
+  text-align: left;
+}
+
+.wonderland-name {
+  display: block;
+  white-space: nowrap;
+}
+
+.wonderland-word {
+  display: block;
+  margin-top: 8px;
+  margin-left: 0.55em;
+  color: #922f34;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.birthday-invitation,
+.birthday-written-date {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(10px, 2vw, 16px);
+  font-style: italic;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.birthday-invitation {
+  max-width: none;
+  color: #3c3630;
+}
+
+.birthday-written-date {
+  margin-top: 4px;
+  color: #756044;
 }
 
 @media (max-width: 600px) {
@@ -225,7 +311,7 @@
   }
 
   .book-entrance .story-title {
-    font-size: clamp(40px, 12vw, 64px);
+    font-size: clamp(38px, 11vw, 60px);
   }
 
   .book-entrance .story-subtitle {
@@ -241,125 +327,9 @@
   .book-entrance .rabbit-portal {
     width: min(100%, 300px);
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .book-entrance .story-title,
-  .book-entrance .story-subtitle,
-  .book-entrance .rabbit-portal,
-  .book-entrance .doorway-page #enter-button {
-    animation: none;
-    opacity: 1;
-    visibility: visible;
-    filter: none;
-  }
-
-  .book-entrance .ornate-cap::after {
-    opacity: 1;
-    transition: none;
-  }
-
-  .portal-light {
-    animation: none;
-    opacity: 0.5;
-  }
-
-  .story-letter {
-    animation: none;
-    opacity: 1;
-  }
-
-  .book-entrance .rabbit-portal {
-    clip-path: none;
-  }
-}
-
-.birthday-paper {
-  position: relative;
-  isolation: isolate;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 620px;
-  padding: 42px 24px 28px;
-  overflow: visible;
-
-  border: 7px solid #3c1319;
-  border-radius: 3px;
-  outline: none;
-
-  color: #292725;
-  background-color: #f2ecdf;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Cfilter id='grain' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.06' filter='url(%23grain)'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at center, #f8f3e8, #f2ecdf 65%, #e9dfcc);
-
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-
-  box-shadow: inset 0 0 35px rgb(91 54 22 / 12%), 0 20px 60px rgb(0 0 0 / 40%);
-}
-
-.inner-book-copy {
-  width: 100%;
-  text-align: center;
-  font-family: "Cormorant Garamond", Georgia, serif;
-}
-
-.chapter-heading {
-  margin: 0 0 28px;
-  color: #756044;
-  font-size: clamp(12px, 2.5vw, 20px);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-.birthday-paper .wonderland-heading {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto 30px;
-  color: #292725;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(42px, 7vw, 70px);
-  font-weight: 500;
-  line-height: 1.05;
-  text-align: left;
-}
-
-.wonderland-name {
-  display: block;
-}
-
-.wonderland-word {
-  display: block;
-  margin-left: 0.7em;
-  color: #922f34;
-  font-style: italic;
-}
-
-.birthday-invitation,
-.birthday-written-date {
-  margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(12px, 2.6vw, 24px);
-  font-style: italic;
-  line-height: 1.5;
-  white-space: nowrap;
-}
-
-.birthday-invitation {
-  max-width: none;
-  color: #3c3630;
-}
-
-.birthday-written-date {
-  margin-top: 4px;
-  color: #756044;
-}
-
-@media (max-width: 600px) {
   .birthday-paper {
-    padding: 34px 12px 24px;
+    padding: 52px 18px 42px;
     border-width: 5px;
   }
 
@@ -369,7 +339,31 @@
   }
 
   .birthday-paper .wonderland-heading {
-    font-size: clamp(34px, 9vw, 52px);
+    font-size: clamp(28px, 8vw, 46px);
     margin-bottom: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-entrance .story-title,
+  .book-entrance .story-subtitle,
+  .book-entrance .rabbit-portal,
+  .book-entrance .doorway-page #enter-button,
+  .story-letter {
+    opacity: 1;
+    visibility: visible;
+    animation: none;
+    filter: none;
+  }
+
+  .book-entrance .rabbit-portal {
+    mask-image: none;
+    -webkit-mask-image: none;
+    clip-path: none;
+  }
+
+  .portal-light {
+    animation: none;
+    opacity: 0.5;
   }
 }
