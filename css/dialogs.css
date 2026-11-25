@@ -10,7 +10,7 @@
   margin: auto;
   padding: 48px 30px 32px;
   overflow-y: auto;
-  border: 1px solid var(--gold);
+  border: 1px solid #a58a63;
   text-align: center;
   color: var(--cream);
   box-shadow: 0 30px 100px rgb(0 0 0 / 70%), 0 0 45px rgb(112 35 62 / 15%);
@@ -20,7 +20,6 @@
       transparent 60%
     ),
     #151313;
-  border-color: #a58a63;
 }
 
 .dialog-close {
@@ -53,16 +52,6 @@
   font-size: 19px;
 }
 
-.detail-dialog .coming-soon {
-  margin-top: 24px;
-  padding: 15px;
-  border: 1px dashed var(--gold);
-  font-size: 14px;
-  background: #261923;
-  border-color: #866174;
-  color: #e1d3e3;
-}
-
 body.dialog-open {
   overflow: hidden;
 }
@@ -72,7 +61,7 @@ body.dialog-open {
   backdrop-filter: blur(8px);
 }
 
-@media (min-width: 701px) {
+@media (min-width: 651px) {
   .detail-dialog {
     box-sizing: border-box;
     width: min(960px, calc(100vw - 64px));
@@ -80,14 +69,121 @@ body.dialog-open {
     max-width: none;
     max-height: calc(100dvh - 64px);
     padding: 42px 36px 28px;
-    overflow-y: auto;
   }
+}
 
-  #rsvp-dialog > p,
-  #wishlist-dialog > p,
-  #rsvp-dialog .rsvp-form {
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
+#rsvp-dialog,
+#wishlist-dialog {
+  box-sizing: border-box;
+  height: auto;
+  min-height: 0;
+  max-height: calc(100svh - 32px);
+  padding: 42px 30px 24px;
+  overflow-y: auto;
+}
+
+#rsvp-dialog h2,
+#wishlist-dialog h2 {
+  margin: 6px 0 12px;
+}
+
+#rsvp-dialog .eyebrow,
+#wishlist-dialog .eyebrow {
+  margin: 0 0 6px;
+}
+
+#rsvp-dialog > p:not(.eyebrow),
+#wishlist-dialog > p:not(.eyebrow) {
+  max-width: none;
+  margin: 10px 0;
+  line-height: 1.45;
+}
+
+#rsvp-dialog .rsvp-form {
+  display: grid;
+  gap: 6px;
+  max-width: none;
+  margin: 16px 0 0;
+}
+
+#rsvp-dialog .rsvp-form label {
+  margin-top: 4px;
+}
+
+#rsvp-dialog .rsvp-form input,
+#rsvp-dialog .rsvp-form select,
+#rsvp-dialog .rsvp-form textarea {
+  box-sizing: border-box;
+  padding: 10px 12px;
+}
+
+#rsvp-dialog .rsvp-form textarea {
+  height: 70px;
+  min-height: 70px;
+}
+
+#rsvp-dialog .decline-details {
+  gap: 6px;
+}
+
+#rsvp-dialog .rsvp-submit {
+  margin-top: 10px;
+  padding: 11px 22px;
+}
+
+#rsvp-dialog .rsvp-status {
+  margin-top: 10px;
+}
+
+#wishlist-dialog .wishlist-note {
+  margin-bottom: 0;
+}
+
+#rsvp-dialog hr,
+#wishlist-dialog hr {
+  display: none;
+}
+
+#rsvp-dialog > p,
+#wishlist-dialog > p,
+#rsvp-dialog .rsvp-form {
+  border: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 651px) {
+  #rsvp-dialog,
+  #wishlist-dialog {
+    width: min(960px, calc(100vw - 64px));
+    max-height: calc(100dvh - 48px);
   }
+}
+
+@media (max-width: 650px) {
+  #rsvp-dialog,
+  #wishlist-dialog {
+    width: calc(100% - 32px);
+    padding: 42px 22px 24px;
+  }
+}
+
+dialog#rsvp-dialog,
+dialog#wishlist-dialog {
+  height: fit-content;
+  min-height: 0;
+  max-height: calc(100svh - 48px);
+  padding: 42px 30px 20px;
+}
+
+#rsvp-dialog .rsvp-form {
+  margin-bottom: 0;
+}
+
+#rsvp-dialog .rsvp-status:empty {
+  display: none;
+}
+
+#rsvp-dialog > :last-child,
+#wishlist-dialog > :last-child {
+  margin-bottom: 0;
 }

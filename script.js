@@ -140,7 +140,7 @@ rsvpForm.addEventListener("submit", async (event) => {
 const wardrobeLooks = {
   "talking-flowers": {
     name: "Talking Flowers",
-    alt: "Nabiha wearing a dusty-pink hijab, ivory lace blouse, sage waistcoat and layered floral maxi skirt",
+    alt: "Nabiha wearing a coral hijab with a cartoon flower pin, green cardigan, ivory blouse and layered pink petal skirt",
     background: "#eadbd8",
     accent: "#8a9875",
   },
@@ -240,52 +240,52 @@ let currentLook = "nabiha";
 let latestLookRequest = 0;
 
 async function changeOutfit(key) {
+  const look = wardrobeLooks[key];
+
+  if (!look) return;
+
+  const requestId = ++latestLookRequest;
+
   if (key === currentLook) {
+    wardrobeStage.removeAttribute("aria-busy");
+    wardrobeStatus.textContent = `${look.name} look selected.`;
     return;
   }
 
-  const look = wardrobeLooks[key];
-  const requestId = ++latestLookRequest;
   const imagePath = `images/outfits/${key}.png`;
 
   wardrobeStatus.textContent = `Trying on ${look.name}…`;
   wardrobeStage.setAttribute("aria-busy", "true");
 
-  // Load the new picture before replacing the visible one.
   const nextImage = new Image();
   nextImage.src = imagePath;
 
   try {
     await nextImage.decode();
 
-    // Ignore an older request if another character was clicked.
-    if (requestId !== latestLookRequest) {
-      return;
-    }
+    if (requestId !== latestLookRequest) return;
 
     wardrobeAvatar.classList.remove("is-changing");
-
     wardrobeAvatar.src = imagePath;
     wardrobeAvatar.alt = look.alt;
 
     wardrobeStage.style.setProperty("--stage-colour", look.background);
-
     wardrobeStage.style.setProperty("--stage-accent", look.accent);
 
     characterButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.dataset.look === key));
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.look === key)
+      );
     });
 
-    // Restart the reveal animation.
     void wardrobeAvatar.offsetWidth;
     wardrobeAvatar.classList.add("is-changing");
 
     currentLook = key;
     wardrobeStatus.textContent = `${look.name} look selected.`;
   } catch {
-    if (requestId !== latestLookRequest) {
-      return;
-    }
+    if (requestId !== latestLookRequest) return;
 
     wardrobeStatus.textContent =
       "That outfit couldn't load. Please try another character.";

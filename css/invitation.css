@@ -131,6 +131,9 @@
     ),
     radial-gradient(ellipse at 85% 80%, rgb(125 20 32 / 12%), transparent 55%),
     #0b0b0b;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .birthday-paper {
